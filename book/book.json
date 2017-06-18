@@ -7,7 +7,7 @@
     "plugins": [ "-lunr","-search","search-pro",
         "advanced-emoji",
         "github" ,"github-buttons",
-        "katex",
+        "mathjax",
         "splitter",
         "expandable-chapters-small",
         "tbfed-pagefooter",

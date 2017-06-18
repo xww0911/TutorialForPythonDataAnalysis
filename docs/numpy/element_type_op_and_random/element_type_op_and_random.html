@@ -1,0 +1,928 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>numpy数组的元素类型和随机操作 · python攻略--消息队列</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="hsz">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html" />
+    
+    
+    <link rel="prev" href="../narray_and_universal_function/narray_and_universal_function.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.hszofficial.site/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    科学计算通用数组工具numpy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../narray_and_universal_function/narray_and_universal_function.html">
+            
+                <a href="../narray_and_universal_function/narray_and_universal_function.html">
+            
+                    
+                    humpy数组与universal-function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="element_type_op_and_random.html">
+            
+                <a href="element_type_op_and_random.html">
+            
+                    
+                    numpy数组的元素类型和随机操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+            
+                <a href="../Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+            
+                    
+                    多项式与线性代数计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../statistics/statistics.html">
+            
+                <a href="../statistics/statistics.html">
+            
+                    
+                    numpy的统计学工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../Financial_functions.html">
+            
+                <a href="../Financial_functions.html">
+            
+                    
+                    numpy的财务分析工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../frequency_analysis/frequency_analysis.html">
+            
+                <a href="../frequency_analysis/frequency_analysis.html">
+            
+                    
+                    频谱分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../matplotlib/">
+            
+                <a href="../../matplotlib/">
+            
+                    
+                    可视化工具matplotlib
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                <a href="../../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                    
+                    matplotlib设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../matplotlib/pyplot/pyplot.html">
+            
+                <a href="../../matplotlib/pyplot/pyplot.html">
+            
+                    
+                    pyplot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                <a href="../../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                    
+                    桑基图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../matplotlib/triangular_grids/triangular_grids.html">
+            
+                <a href="../../matplotlib/triangular_grids/triangular_grids.html">
+            
+                    
+                    非结构图形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../matplotlib/load_image/load_image.html">
+            
+                <a href="../../matplotlib/load_image/load_image.html">
+            
+                    
+                    图片加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../matplotlib/save_img/save_img.html">
+            
+                <a href="../../matplotlib/save_img/save_img.html">
+            
+                    
+                    图片保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../matplotlib/animation/animation.html">
+            
+                <a href="../../matplotlib/animation/animation.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../matplotlib/widgets.html">
+            
+                <a href="../../matplotlib/widgets.html">
+            
+                    
+                    matplotlib控件与交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../../matplotlib/with_webtech">
+            
+                <span>
+            
+                    
+                    与web技术结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../../matplotlib/finance/finance.html">
+            
+                <a href="../../matplotlib/finance/finance.html">
+            
+                    
+                    金融信息爬取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../../matplotlib/结语.html">
+            
+                <a href="../../matplotlib/结语.html">
+            
+                    
+                    结语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >numpy数组的元素类型和随机操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5143;&#x7D20;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x968F;&#x673A;&#x6570;"><b>1. </b>&#x5143;&#x7D20;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x968F;&#x673A;&#x6570;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5185;&#x7F6E;&#x6570;&#x636E;&#x7C7B;&#x578B;"><b>1.1. </b>&#x5185;&#x7F6E;&#x6570;&#x636E;&#x7C7B;&#x578B;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#numpy&#x5185;&#x7F6E;&#x8FD0;&#x7B97;&#x51FD;&#x6570;"><b>1.2. </b>numpy&#x5185;&#x7F6E;&#x8FD0;&#x7B97;&#x51FD;&#x6570;:</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;"><b>1.3. </b>&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x968F;&#x673A;&#x79CD;&#x5B50;&#x8BBE;&#x7F6E;"><b>1.3.1. </b>&#x968F;&#x673A;&#x79CD;&#x5B50;&#x8BBE;&#x7F6E;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6D17;&#x724C;"><b>1.3.2. </b>&#x6D17;&#x724C;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5747;&#x5300;&#x5206;&#x5E03;"><b>1.3.3. </b>&#x5747;&#x5300;&#x5206;&#x5E03;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6B63;&#x6001;&#x5206;&#x5E03;"><b>1.3.4. </b>&#x6B63;&#x6001;&#x5206;&#x5E03;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4E8C;&#x9879;&#x5206;&#x5E03;"><b>1.3.5. </b>*&#x4E8C;&#x9879;&#x5206;&#x5E03;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#beta&#x5206;&#x5E03;"><b>1.3.6. </b>Beta&#x5206;&#x5E03;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5361;&#x65B9;&#x5206;&#x5E03;"><b>1.3.7. </b>*&#x5361;&#x65B9;&#x5206;&#x5E03;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4F3D;&#x9A6C;&#x5206;&#x5E03;"><b>1.3.8. </b>&#x4F3D;&#x9A6C;&#x5206;&#x5E03;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x968F;&#x673A;&#x6E38;&#x8D70;"><b>1.3.9. </b>&#x968F;&#x673A;&#x6E38;&#x8D70;</a></li></ul></ul></ul></div><a href="#&#x5143;&#x7D20;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x968F;&#x673A;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x5143;&#x7D20;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x968F;&#x673A;&#x6570;"><a name="&#x5143;&#x7D20;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x968F;&#x673A;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x5143;&#x7D20;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x968F;&#x673A;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x5143;&#x7D20;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x548C;&#x968F;&#x673A;&#x6570;</h1>
+<p>&#x6570;&#x503C;&#x548C;&#x968F;&#x673A;&#x90E8;&#x5206;&#x662F;numpy&#x7684;&#x57FA;&#x7840;,&#x8FD9;&#x7BC7;&#x5C06;&#x5B66;&#x4E60;&#x4EE5;&#x4E0B;3&#x4E2A;&#x65B9;&#x9762;</p>
+<ul>
+<li>&#x5185;&#x7F6E;&#x6570;&#x636E;&#x7C7B;&#x578B;</li>
+<li>&#x5185;&#x7F6E;&#x6570;&#x5B66;&#x8FD0;&#x7B97;</li>
+<li>&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x65B9;&#x6CD5;<ul>
+<li>&#x5747;&#x5300;&#x5206;&#x5E03;</li>
+<li>&#x6B63;&#x6001;&#x5206;&#x5E03;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">import</span> random
+</code></pre>
+<pre><code class="lang-python">%matplotlib inline
+</code></pre>
+<h2 id="&#x5185;&#x7F6E;&#x6570;&#x636E;&#x7C7B;&#x578B;"><a name="&#x5185;&#x7F6E;&#x6570;&#x636E;&#x7C7B;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x7F6E;&#x6570;&#x636E;&#x7C7B;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5185;&#x7F6E;&#x6570;&#x636E;&#x7C7B;&#x578B;</h2>
+<p>numpy&#x53EF;&#x4EE5;&#x7279;&#x5316;&#x5176;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x83B7;&#x5F97;&#x66F4;&#x9AD8;&#x7684;&#x6548;&#x7387;</p>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x7C7B;&#x578B;&#x4EE3;&#x7801;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int8/uint8</code></td>
+<td><code>i1/u1</code></td>
+<td><code>&#x6709;&#x7B26;&#x53F7;/&#x65E0;&#x7B26;&#x53F7;8&#x4F4D;&#x6574;&#x578B;</code></td>
+</tr>
+<tr>
+<td><code>int16/uint16</code></td>
+<td><code>i2/u2</code></td>
+<td><code>&#x6709;&#x7B26;&#x53F7;/&#x65E0;&#x7B26;&#x53F7;16&#x4F4D;&#x6574;&#x578B;</code></td>
+</tr>
+<tr>
+<td><code>int32/uint32</code></td>
+<td><code>i4/u4</code></td>
+<td><code>&#x6709;&#x7B26;&#x53F7;/&#x65E0;&#x7B26;&#x53F7;32&#x4F4D;&#x6574;&#x578B;</code></td>
+</tr>
+<tr>
+<td><code>int64/uint64</code></td>
+<td><code>i8/u8</code></td>
+<td><code>&#x6709;&#x7B26;&#x53F7;/&#x65E0;&#x7B26;&#x53F7;64&#x4F4D;&#x6574;&#x578B;</code></td>
+</tr>
+<tr>
+<td><code>float16</code></td>
+<td><code>f2</code></td>
+<td><code>&#x534A;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;</code></td>
+</tr>
+<tr>
+<td><code>float32</code></td>
+<td><code>f4&#x6216;f</code></td>
+<td><code>&#x6807;&#x51C6;&#x5355;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;</code></td>
+</tr>
+<tr>
+<td><code>float64</code></td>
+<td><code>f8&#x6216;d</code></td>
+<td><code>&#x6807;&#x51C6;&#x53CC;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;</code></td>
+</tr>
+<tr>
+<td><code>float128</code></td>
+<td><code>f16&#x6216;g</code></td>
+<td><code>&#x6269;&#x5C55;&#x7CBE;&#x5EA6;&#x6D6E;&#x70B9;&#x6570;</code></td>
+</tr>
+<tr>
+<td><code>complex64</code></td>
+<td><code>c8</code></td>
+<td><code>32&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x8868;&#x793A;&#x7684;&#x590D;&#x6570;</code></td>
+</tr>
+<tr>
+<td><code>complex128</code></td>
+<td><code>c16</code></td>
+<td><code>64&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x8868;&#x793A;&#x7684;&#x590D;&#x6570;</code></td>
+</tr>
+<tr>
+<td><code>complex256</code></td>
+<td><code>c32</code></td>
+<td><code>128&#x4E3A;&#x6D6E;&#x70B9;&#x6570;&#x8868;&#x793A;&#x7684;&#x590D;&#x6570;</code></td>
+</tr>
+<tr>
+<td><code>bool</code></td>
+<td><code>?</code></td>
+<td><code>&#x5E03;&#x5C14;&#x503C;</code></td>
+</tr>
+<tr>
+<td><code>object</code></td>
+<td><code>O</code></td>
+<td><code>python&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</code></td>
+</tr>
+<tr>
+<td><code>string_</code></td>
+<td><code>SX</code></td>
+<td><code>&#x56FA;&#x5B9A;&#x957F;&#x5EA6;&#x5B57;&#x7B26;&#x4E32;,&#x6BD4;&#x5982;&#x957F;&#x5EA6;&#x4E3A;10,&#x5219;S10</code></td>
+</tr>
+<tr>
+<td><code>unicode_</code></td>
+<td><code>UX</code></td>
+<td><code>&#x56FA;&#x5B9A;&#x957F;&#x5EA6;unicode,&#x6BD4;&#x5982;&#x957F;&#x5EA6;&#x4E3A;10,&#x5219;U10</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-python">np.ones((<span class="hljs-number">2</span>,<span class="hljs-number">2</span>),dtype=<span class="hljs-string">&quot;S1&quot;</span>)
+</code></pre>
+<pre><code>array([[b&apos;1&apos;, b&apos;1&apos;],
+       [b&apos;1&apos;, b&apos;1&apos;]], 
+      dtype=&apos;|S1&apos;)
+</code></pre><h2 id="numpy&#x5185;&#x7F6E;&#x8FD0;&#x7B97;&#x51FD;&#x6570;"><a name="numpy&#x5185;&#x7F6E;&#x8FD0;&#x7B97;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#numpy&#x5185;&#x7F6E;&#x8FD0;&#x7B97;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. numpy&#x5185;&#x7F6E;&#x8FD0;&#x7B97;&#x51FD;&#x6570;:</h2>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&#x4E00;&#x5143;&#x8FD0;&#x7B97;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>abs/fabs</td>
+<td>&#x7EDD;&#x5BF9;&#x503C;</td>
+</tr>
+<tr>
+<td>sqrt</td>
+<td>&#x5E73;&#x65B9;&#x6839;</td>
+</tr>
+<tr>
+<td>square</td>
+<td>&#x5E73;&#x65B9;</td>
+</tr>
+<tr>
+<td>exp</td>
+<td>&#x6307;&#x6570;</td>
+</tr>
+<tr>
+<td>log/log10/log2/log1p</td>
+<td>&#x5206;&#x522B;&#x4E3A;&#x81EA;&#x7136;&#x5BF9;&#x6570;(e&#x4E3A;&#x5E95;&#x6570;)/&#x5E95;&#x6570;&#x4E3A;10&#x7684;log/&#x5E95;&#x6570;&#x4E3A;2&#x7684;log/log(1+x)</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>&#x6C42;&#x7B26;&#x53F7;</td>
+</tr>
+<tr>
+<td>ceil</td>
+<td>&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x8BE5;&#x503C;&#x7684;&#x6700;&#x5C0F;&#x6574;&#x6570;</td>
+</tr>
+<tr>
+<td>floor</td>
+<td>&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x8BE5;&#x503C;&#x7684;&#x6700;&#x5927;&#x6574;&#x6570;</td>
+</tr>
+<tr>
+<td>rint</td>
+<td>&#x56DB;&#x820D;&#x4E94;&#x5165;&#x5230;&#x6700;&#x8FD1;&#x7684;&#x6574;&#x6570;,dtype&#x4E0D;&#x53D8;</td>
+</tr>
+<tr>
+<td>modf</td>
+<td>&#x5C0F;&#x6570;&#x6574;&#x6570;&#x90E8;&#x5206;&#x5206;&#x79BB;</td>
+</tr>
+<tr>
+<td>isnan</td>
+<td>---</td>
+</tr>
+<tr>
+<td>isfinite/isinf</td>
+<td>---</td>
+</tr>
+<tr>
+<td>sin/sinh/cos/cosh/tan/tanh</td>
+<td>&#x4E09;&#x89D2;&#x51FD;&#x6570;,&#x53CC;&#x66F2;&#x4E09;&#x89D2;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td>arcsin/arcsinh/arccos/arccosh/arctan/arctanh</td>
+<td>&#x53CD;&#x4E09;&#x89D2;&#x51FD;&#x6570;,&#x53CD;&#x53CC;&#x66F2;&#x4E09;&#x89D2;&#x51FD;&#x6570;</td>
+</tr>
+<tr>
+<td>logical_not</td>
+<td>&#x8BA1;&#x7B97;&#x5404;&#x5143;&#x7D20;not x&#x7684;&#x771F;&#x503C;</td>
+</tr>
+<tr>
+<td><strong>&#x4E8C;&#x5143;&#x8FD0;&#x7B97;</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>add</td>
+<td>&#x52A0;</td>
+</tr>
+<tr>
+<td>subtract</td>
+<td>&#x51CF;</td>
+</tr>
+<tr>
+<td>multiply</td>
+<td>&#x4E58;</td>
+</tr>
+<tr>
+<td>divide/floor_divide</td>
+<td>&#x9664;</td>
+</tr>
+<tr>
+<td>power</td>
+<td>&#x4E58;&#x65B9;</td>
+</tr>
+<tr>
+<td>maximun/fmax</td>
+<td>&#x6700;&#x5927;&#x503C;</td>
+</tr>
+<tr>
+<td>minimum/fmin</td>
+<td>&#x6700;&#x5C0F;&#x503C;</td>
+</tr>
+<tr>
+<td>mod</td>
+<td>&#x6C42;&#x6A21;</td>
+</tr>
+<tr>
+<td>copysign</td>
+<td>&#x5C06;&#x540E;&#x9762;&#x7684;&#x7B26;&#x53F7;&#x4ED8;&#x7ED9;&#x524D;&#x9762;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;"><a name="&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x51FD;&#x6570;</h2>
+<p>numpy&#x6709;&#x81EA;&#x5DF1;&#x7684;&#x968F;&#x673A;&#x6570;&#x751F;&#x6210;&#x5668;,&#x5B83;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6807;&#x51C6;&#x5E93;&#x7684;&#x8865;&#x5145;,&#x5176;&#x63A5;&#x53E3;&#x57FA;&#x672C;&#x548C;&#x6807;&#x51C6;&#x5E93;&#x7684;&#x4E00;&#x81F4;</p>
+<h3 id="&#x968F;&#x673A;&#x79CD;&#x5B50;&#x8BBE;&#x7F6E;"><a name="&#x968F;&#x673A;&#x79CD;&#x5B50;&#x8BBE;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#&#x968F;&#x673A;&#x79CD;&#x5B50;&#x8BBE;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. &#x968F;&#x673A;&#x79CD;&#x5B50;&#x8BBE;&#x7F6E;</h3>
+<pre><code class="lang-python">np.random.seed(<span class="hljs-number">3</span>)
+</code></pre>
+<h3 id="&#x6D17;&#x724C;"><a name="&#x6D17;&#x724C;" class="anchor-navigation-ex-anchor" href="#&#x6D17;&#x724C;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. &#x6D17;&#x724C;</h3>
+<pre><code class="lang-python">np.random.permutation([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>]) <span class="hljs-comment"># &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x5E8F;&#x5217;</span>
+</code></pre>
+<pre><code>array([2, 1, 3])
+</code></pre><pre><code class="lang-python">a=np.array([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])
+np.random.shuffle(a)<span class="hljs-comment">#&#x5C31;&#x5730;&#x6D17;&#x724C;</span>
+a
+</code></pre>
+<pre><code>array([1, 3, 2])
+</code></pre><h3 id="&#x5747;&#x5300;&#x5206;&#x5E03;"><a name="&#x5747;&#x5300;&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#&#x5747;&#x5300;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.3. &#x5747;&#x5300;&#x5206;&#x5E03;</h3>
+<pre><code class="lang-python">np.random.rand() <span class="hljs-comment">#[0,1)&#x95F4;&#x5747;&#x5300;&#x5206;&#x5E03;</span>
+</code></pre>
+<pre><code>0.2909047389129443
+</code></pre><pre><code class="lang-python">np.random.rand(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>) <span class="hljs-comment">#&#x751F;&#x6210;&#x5747;&#x5300;&#x5206;&#x5E03;&#x7684;&#x6570;&#x7EC4;</span>
+</code></pre>
+<pre><code>array([[ 0.51082761,  0.89294695,  0.89629309],
+       [ 0.12558531,  0.20724288,  0.0514672 ]])
+</code></pre><pre><code class="lang-python">np.random.uniform(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>) <span class="hljs-comment"># &#x8303;&#x56F4;[2,3)&#x4E2D;&#x7684;&#x5747;&#x5300;&#x5206;&#x5E03;</span>
+</code></pre>
+<pre><code>2.4408098436506362
+</code></pre><pre><code class="lang-python">np.random.uniform(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,size=(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>)) <span class="hljs-comment"># &#x8303;&#x56F4;[2,3)&#x4E2D;&#x7684;&#x5747;&#x5300;&#x5206;&#x5E03;&#x7684;3X4&#x6570;&#x7EC4;</span>
+</code></pre>
+<pre><code>array([[ 2.02987621,  2.45683322,  2.64914405,  2.27848728],
+       [ 2.6762549 ,  2.59086282,  2.02398188,  2.55885409],
+       [ 2.25925245,  2.4151012 ,  2.28352508,  2.69313792]])
+</code></pre><pre><code class="lang-python">np.random.randint(<span class="hljs-number">1</span>,<span class="hljs-number">9</span>)<span class="hljs-comment">#&#x4E0A;&#x4E0B;&#x9650;&#x8303;&#x56F4;[1,9)&#x5185;&#x7684;&#x6574;&#x6570;</span>
+</code></pre>
+<pre><code>7
+</code></pre><pre><code class="lang-python">np.random.randint(<span class="hljs-number">1</span>,<span class="hljs-number">9</span>,size=(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>))<span class="hljs-comment">#&#x4E0A;&#x4E0B;&#x9650;&#x8303;&#x56F4;[1,9)&#x5185;&#x7684;&#x6574;&#x6570;&#x6570;&#x7EC4;</span>
+</code></pre>
+<pre><code>array([[8, 1, 4],
+       [2, 4, 8],
+       [1, 6, 5]])
+</code></pre><pre><code class="lang-python">l=np.random.rand(<span class="hljs-number">1000</span>)
+</code></pre>
+<pre><code class="lang-python">r1=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.005</span>&gt;x&gt;i<span class="hljs-number">-0.005</span>,l))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))]
+</code></pre>
+<pre><code class="lang-python">plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))),r1)
+plt.show()
+</code></pre>
+<p><img src="output_21_0.png" alt="png"></p>
+<h3 id="&#x6B63;&#x6001;&#x5206;&#x5E03;"><a name="&#x6B63;&#x6001;&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#&#x6B63;&#x6001;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.4. &#x6B63;&#x6001;&#x5206;&#x5E03;</h3>
+<pre><code class="lang-python">np.random.normal(<span class="hljs-number">1</span>,<span class="hljs-number">0.5</span>)<span class="hljs-comment">#&#x5747;&#x503C;&#x4E3A;1,&#x6807;&#x51C6;&#x5DEE;&#x5DEE;&#x662F;0.5</span>
+</code></pre>
+<pre><code>1.4976562274678098
+</code></pre><pre><code class="lang-python">np.random.normal(<span class="hljs-number">1</span>,<span class="hljs-number">0.5</span>,size=(<span class="hljs-number">3</span>,<span class="hljs-number">3</span>))<span class="hljs-comment">#&#x5747;&#x503C;&#x4E3A;1,&#x6807;&#x51C6;&#x5DEE;&#x5DEE;&#x662F;0.5</span>
+</code></pre>
+<pre><code>array([[ 1.20455962,  1.62913661,  0.10931642],
+       [ 1.24831185,  0.92775481,  1.43346156],
+       [ 1.11850458,  0.63128245,  1.10479407]])
+</code></pre><pre><code class="lang-python">np.random.randn(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>)<span class="hljs-comment">#&#x5747;&#x503C;&#x4E3A;0,&#x6807;&#x51C6;&#x5DEE;&#x5DEE;&#x662F;1&#x7684;&#x6807;&#x51C6;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x7684;2X3&#x6570;&#x7EC4;</span>
+</code></pre>
+<pre><code>array([[ 0.80698364, -1.66132958,  0.24282147],
+       [ 0.64382288,  1.35099208, -1.24669106]])
+</code></pre><pre><code class="lang-python">l=np.random.randn(<span class="hljs-number">100000</span>)
+</code></pre>
+<pre><code class="lang-python">r1=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.05</span>&gt;x&gt;i<span class="hljs-number">-0.05</span>,l))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">2</span>),range(<span class="hljs-number">-40</span>,<span class="hljs-number">40</span>,<span class="hljs-number">1</span>))]
+</code></pre>
+<pre><code class="lang-python">
+plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">2</span>),range(<span class="hljs-number">-40</span>,<span class="hljs-number">40</span>,<span class="hljs-number">1</span>))),r1)
+plt.show()
+</code></pre>
+<p><img src="output_28_0.png" alt="png"></p>
+<h3 id="&#x4E8C;&#x9879;&#x5206;&#x5E03;"><a name="&#x4E8C;&#x9879;&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#&#x4E8C;&#x9879;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.5. *&#x4E8C;&#x9879;&#x5206;&#x5E03;</h3>
+<p>&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x662F;n&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x662F;/&#x975E;&#x8BD5;&#x9A8C;&#x4E2D;&#x6210;&#x529F;&#x7684;&#x6B21;&#x6570;&#x7684;&#x79BB;&#x6563;&#x6982;&#x7387;&#x5206;&#x5E03;&#xFF0C;&#x5176;&#x4E2D;&#x6BCF;&#x6B21;&#x8BD5;&#x9A8C;&#x7684;&#x6210;&#x529F;&#x6982;&#x7387;&#x4E3A;p&#x3002;&#x8FD9;&#x6837;&#x7684;&#x5355;&#x6B21;&#x6210;&#x529F;/&#x5931;&#x8D25;&#x8BD5;&#x9A8C;&#x53C8;&#x79F0;&#x4E3A;&#x4F2F;&#x52AA;&#x5229;&#x8BD5;&#x9A8C;&#x3002;&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;&#x5F53;n = 1&#x65F6;&#xFF0C;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x5C31;&#x662F;&#x4F2F;&#x52AA;&#x5229;&#x5206;&#x5E03;&#x3002;&#x4E8C;&#x9879;&#x5206;&#x5E03;&#x662F;&#x663E;&#x8457;&#x6027;&#x5DEE;&#x5F02;&#x7684;&#x4E8C;&#x9879;&#x8BD5;&#x9A8C;&#x7684;&#x57FA;&#x7840;&#x3002;</p>
+<p>Poisson&#x5206;&#x5E03;&#x662F;&#x4E8C;&#x9879;&#x5206;&#x5E03;n&#x5F88;&#x5927;&#x800C;P&#x5F88;&#x5C0F;&#x65F6;&#x7684;&#x7279;&#x6B8A;&#x5F62;&#x5F0F;&#xFF0C;&#x662F;&#x4E24;&#x5206;&#x7C7B;&#x8D44;&#x6599;&#x5728;n&#x6B21;&#x5B9E;&#x9A8C;&#x4E2D;&#x53D1;&#x751F;x&#x6B21;&#x67D0;&#x79CD;&#x7ED3;&#x679C;&#x7684;&#x6982;&#x7387;&#x5206;&#x5E03;&#x3002;&#x5176;&#x6982;&#x7387;&#x5BC6;&#x5EA6;&#x51FD;&#x6570;&#x4E3A;&#xFF1A;P(x)=e-&#xB5;*&#xB5;x/x! x=0,1,2...n&#xFF0C;&#x5176;&#x4E2D;e&#x4E3A;&#x81EA;&#x7136;&#x5BF9;&#x6570;&#x7684;&#x5E95;&#xFF0C;&#xB5;&#x4E3A;&#x603B;&#x4F53;&#x5747;&#x6570;&#xFF0C;x&#x4E3A;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x7684;&#x9633;&#x6027;&#x6570;&#x3002;</p>
+<pre><code class="lang-python">sum(np.random.binomial(<span class="hljs-number">10</span>,<span class="hljs-number">0.1</span>,<span class="hljs-number">1000</span>)==<span class="hljs-number">0</span>)/<span class="hljs-number">1000.0</span><span class="hljs-comment"># 10&#x4E2A;&#x6837;&#x672C;&#x6210;&#x529F;&#x7387;&#x4E3A;0.1,&#x9A8C;&#x8BC1;1000&#x6B21;&#x5168;&#x90E8;&#x90FD;&#x5931;&#x8D25;&#x7684;&#x6982;&#x7387;</span>
+</code></pre>
+<pre><code>0.35499999999999998
+</code></pre><h3 id="beta&#x5206;&#x5E03;"><a name="beta&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#beta&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.6. Beta&#x5206;&#x5E03;</h3>
+<pre><code class="lang-python">np.random.beta(<span class="hljs-number">0.5</span>,<span class="hljs-number">0.3</span>)
+</code></pre>
+<pre><code>0.3470417362539864
+</code></pre><pre><code class="lang-python">np.random.beta(<span class="hljs-number">0.5</span>,<span class="hljs-number">0.3</span>,[<span class="hljs-number">2</span>,<span class="hljs-number">3</span>])
+</code></pre>
+<pre><code>array([[ 0.05610158,  0.29834244,  0.77032789],
+       [ 0.94635763,  0.96394357,  0.02252188]])
+</code></pre><pre><code class="lang-python">l0=np.random.beta(<span class="hljs-number">0.5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100000</span>)
+l1=np.random.beta(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">100000</span>)
+l2=np.random.beta(<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">100000</span>)
+l3=np.random.beta(<span class="hljs-number">2</span>,<span class="hljs-number">5</span>,<span class="hljs-number">100000</span>)
+</code></pre>
+<pre><code class="lang-python">r0=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.005</span>&gt;x&gt;i<span class="hljs-number">-0.005</span>,l0))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))]
+r1=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.005</span>&gt;x&gt;i<span class="hljs-number">-0.005</span>,l1))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))]
+r2=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.005</span>&gt;x&gt;i<span class="hljs-number">-0.005</span>,l2))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))]
+r3=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.005</span>&gt;x&gt;i<span class="hljs-number">-0.005</span>,l3))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))]
+</code></pre>
+<pre><code class="lang-python">plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))),r0,color=<span class="hljs-string">&quot;red&quot;</span>)
+plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))),r1,color=<span class="hljs-string">&quot;blue&quot;</span>)
+plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))),r2,color=<span class="hljs-string">&quot;green&quot;</span>)
+plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.01</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">1</span>))),r3,color=<span class="hljs-string">&quot;yellow&quot;</span>)
+plt.show()
+</code></pre>
+<p><img src="output_36_0.png" alt="png"></p>
+<pre><code class="lang-python">min(l)
+</code></pre>
+<pre><code>-4.5696665976275819
+</code></pre><h3 id="&#x5361;&#x65B9;&#x5206;&#x5E03;"><a name="&#x5361;&#x65B9;&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#&#x5361;&#x65B9;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.7. *&#x5361;&#x65B9;&#x5206;&#x5E03;</h3>
+<p>&#x82E5;k&#x4E2A;&#x968F;&#x673A;&#x53D8;&#x91CF;$Z_1&#x3001;&#x2026;&#x2026;&#x3001;Z_k$&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#xFF0C;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x7684;&#x968F;&#x673A;&#x53D8;&#x91CF;&#xFF08;&#x6570;&#x5B66;&#x671F;&#x671B;&#x4E3A;0&#x3001;&#x65B9;&#x5DEE;&#x4E3A;1&#xFF09;&#xFF0C;&#x5219;&#x968F;&#x673A;&#x53D8;&#x91CF;Z&#x7684;&#x5E73;&#x65B9;&#x548C;</p>
+<p><script type="math/tex; ">X=\sum_{i=1}^k Z_i^2</script></p>
+<p>&#x88AB;&#x79F0;&#x4E3A;&#x670D;&#x4ECE;&#x81EA;&#x7531;&#x5EA6;&#x4E3A; k &#x7684;&#x5361;&#x65B9;&#x5206;&#x5E03;&#xFF0C;&#x8BB0;&#x4F5C;</p>
+<p>   <script type="math/tex; ">X\sim\chi^2(k)</script></p>
+<p>   <script type="math/tex; ">X\sim\chi^2_k</script></p>
+<pre><code class="lang-python">np.random.chisquare(<span class="hljs-number">2</span>,(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))
+</code></pre>
+<pre><code>array([[ 0.61277216,  2.27149958,  0.96366957],
+       [ 2.19105947,  3.13205076,  0.37353015]])
+</code></pre><h3 id="&#x4F3D;&#x9A6C;&#x5206;&#x5E03;"><a name="&#x4F3D;&#x9A6C;&#x5206;&#x5E03;" class="anchor-navigation-ex-anchor" href="#&#x4F3D;&#x9A6C;&#x5206;&#x5E03;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.8. &#x4F3D;&#x9A6C;&#x5206;&#x5E03;</h3>
+<pre><code class="lang-python">np.random.gamma(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>)
+</code></pre>
+<pre><code>0.6135197929089496
+</code></pre><pre><code class="lang-python">np.random.gamma(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>))
+</code></pre>
+<pre><code>array([[ 0.66365723,  1.2891411 ,  1.28417052],
+       [ 0.77566813,  2.99185886,  2.11405567]])
+</code></pre><pre><code class="lang-python">l0=np.random.gamma(<span class="hljs-number">0.5</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100000</span>)
+l1=np.random.gamma(<span class="hljs-number">9</span>,<span class="hljs-number">0.5</span>,<span class="hljs-number">100000</span>)
+l2=np.random.gamma(<span class="hljs-number">7</span>,<span class="hljs-number">1</span>,<span class="hljs-number">100000</span>)
+</code></pre>
+<pre><code class="lang-python">r0=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.05</span>&gt;x&gt;i<span class="hljs-number">-0.05</span>,l0))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">1</span>))]
+r1=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.05</span>&gt;x&gt;i<span class="hljs-number">-0.05</span>,l1))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">1</span>))]
+r2=[len(list(filter(<span class="hljs-keyword">lambda</span> x:i+<span class="hljs-number">0.05</span>&gt;x&gt;i<span class="hljs-number">-0.05</span>,l2))) <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">1</span>))]
+</code></pre>
+<pre><code class="lang-python">plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">1</span>))),r0,color=<span class="hljs-string">&quot;red&quot;</span>)
+plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">1</span>))),r1,color=<span class="hljs-string">&quot;blue&quot;</span>)
+plt.plot(list(map(<span class="hljs-keyword">lambda</span> x:round(x*<span class="hljs-number">0.1</span>,<span class="hljs-number">3</span>),range(<span class="hljs-number">0</span>,<span class="hljs-number">200</span>,<span class="hljs-number">1</span>))),r2,color=<span class="hljs-string">&quot;green&quot;</span>)
+plt.show()
+</code></pre>
+<p><img src="output_45_0.png" alt="png"></p>
+<h3 id="&#x968F;&#x673A;&#x6E38;&#x8D70;"><a name="&#x968F;&#x673A;&#x6E38;&#x8D70;" class="anchor-navigation-ex-anchor" href="#&#x968F;&#x673A;&#x6E38;&#x8D70;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.9. &#x968F;&#x673A;&#x6E38;&#x8D70;</h3>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;100&#x6B65;&#x7684;&#x968F;&#x673A;&#x6E38;&#x8D70;</p>
+<pre><code class="lang-python">position = <span class="hljs-number">0</span>
+walk=[position]
+steps = <span class="hljs-number">100</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(steps):
+    step = <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>) <span class="hljs-keyword">else</span> <span class="hljs-number">-1</span>
+    position += step
+    walk.append(position)
+
+plt.plot(range(steps+<span class="hljs-number">1</span>),walk)
+plt.show()
+</code></pre>
+<p><img src="output_47_0.png" alt="png"></p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-06-18 19:21:04
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../narray_and_universal_function/narray_and_universal_function.html" class="navigation navigation-prev " aria-label="Previous page: humpy数组与universal-function">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html" class="navigation navigation-next " aria-label="Next page: 多项式与线性代数计算">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"numpy数组的元素类型和随机操作","level":"1.2.2","depth":2,"next":{"title":"多项式与线性代数计算","level":"1.2.3","depth":2,"path":"numpy/Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.md","ref":"numpy/Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.md","articles":[]},"previous":{"title":"humpy数组与universal-function","level":"1.2.1","depth":2,"path":"numpy/narray_and_universal_function/narray_and_universal_function.md","ref":"numpy/narray_and_universal_function/narray_and_universal_function.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://gitbook.zhangjikai.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python攻略--消息队列","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍消息队列的原理和使用方法,介绍python常用的消息队列工具"},"file":{"path":"numpy/element_type_op_and_random/element_type_op_and_random.md","mtime":"2017-06-18T11:21:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T13:32:42.116Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

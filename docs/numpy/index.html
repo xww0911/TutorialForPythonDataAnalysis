@@ -1,0 +1,566 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>科学计算通用数组工具numpy · python攻略--消息队列</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="hsz">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="narray_and_universal_function/narray_and_universal_function.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.hszofficial.site/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    科学计算通用数组工具numpy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="narray_and_universal_function/narray_and_universal_function.html">
+            
+                <a href="narray_and_universal_function/narray_and_universal_function.html">
+            
+                    
+                    humpy数组与universal-function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="element_type_op_and_random/element_type_op_and_random.html">
+            
+                <a href="element_type_op_and_random/element_type_op_and_random.html">
+            
+                    
+                    numpy数组的元素类型和随机操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+            
+                <a href="Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+            
+                    
+                    多项式与线性代数计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="statistics/statistics.html">
+            
+                <a href="statistics/statistics.html">
+            
+                    
+                    numpy的统计学工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Financial_functions.html">
+            
+                <a href="Financial_functions.html">
+            
+                    
+                    numpy的财务分析工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="frequency_analysis/frequency_analysis.html">
+            
+                <a href="frequency_analysis/frequency_analysis.html">
+            
+                    
+                    频谱分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../matplotlib/">
+            
+                <a href="../matplotlib/">
+            
+                    
+                    可视化工具matplotlib
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                <a href="../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                    
+                    matplotlib设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../matplotlib/pyplot/pyplot.html">
+            
+                <a href="../matplotlib/pyplot/pyplot.html">
+            
+                    
+                    pyplot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                <a href="../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                    
+                    桑基图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../matplotlib/triangular_grids/triangular_grids.html">
+            
+                <a href="../matplotlib/triangular_grids/triangular_grids.html">
+            
+                    
+                    非结构图形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../matplotlib/load_image/load_image.html">
+            
+                <a href="../matplotlib/load_image/load_image.html">
+            
+                    
+                    图片加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../matplotlib/save_img/save_img.html">
+            
+                <a href="../matplotlib/save_img/save_img.html">
+            
+                    
+                    图片保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../matplotlib/animation/animation.html">
+            
+                <a href="../matplotlib/animation/animation.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../matplotlib/widgets.html">
+            
+                <a href="../matplotlib/widgets.html">
+            
+                    
+                    matplotlib控件与交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../matplotlib/with_webtech">
+            
+                <span>
+            
+                    
+                    与web技术结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../matplotlib/finance/finance.html">
+            
+                <a href="../matplotlib/finance/finance.html">
+            
+                    
+                    金融信息爬取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../matplotlib/结语.html">
+            
+                <a href="../matplotlib/结语.html">
+            
+                    
+                    结语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >科学计算通用数组工具numpy</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x901A;&#x7528;&#x6570;&#x7EC4;&#x5DE5;&#x5177;numpy"><b>1. </b>&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x901A;&#x7528;&#x6570;&#x7EC4;&#x5DE5;&#x5177;numpy</a></li></ul></div><a href="#&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x901A;&#x7528;&#x6570;&#x7EC4;&#x5DE5;&#x5177;numpy" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x901A;&#x7528;&#x6570;&#x7EC4;&#x5DE5;&#x5177;numpy"><a name="&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x901A;&#x7528;&#x6570;&#x7EC4;&#x5DE5;&#x5177;numpy" class="anchor-navigation-ex-anchor" href="#&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x901A;&#x7528;&#x6570;&#x7EC4;&#x5DE5;&#x5177;numpy"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x901A;&#x7528;&#x6570;&#x7EC4;&#x5DE5;&#x5177;numpy</h1>
+<p>numpy&#x662F;python&#x4E16;&#x754C;&#x4E2D;&#x4E00;&#x5207;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x5DE5;&#x5177;&#x7684;&#x57FA;&#x7840;.&#x5B83;&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x7EC4;&#x548C;&#x57FA;&#x672C;&#x64CD;&#x4F5C;&#x662F;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x5DE5;&#x5177;&#x7684;&#x5E95;&#x5C42;&#x4F9D;&#x8D56;.
+&#x7531;&#x4E8E;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x7528;C&#x8BED;&#x8A00;&#x7684;,&#x56E0;&#x6B64;&#x975E;&#x5E38;&#x9AD8;&#x6548;.</p>
+<p>&#x672C;&#x6587;&#x4ECE;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x65B9;&#x9762;&#x4ECB;&#x7ECD;:</p>
+<ul>
+<li>numpy&#x7684;&#x6570;&#x7EC4;&#x5DE5;&#x5177;</li>
+<li>numpy&#x7528;&#x4E8E;&#x591A;&#x9879;&#x5F0F;&#x4E0E;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x8BA1;&#x7B97;</li>
+<li>numpy&#x7528;&#x4E8E;&#x7EDF;&#x8BA1;&#x5B66;&#x8BA1;&#x7B97;</li>
+<li>numpy&#x7528;&#x4E8E;&#x8D22;&#x52A1;&#x5206;&#x6790;</li>
+<li>numpy&#x7528;&#x4E8E;&#x9891;&#x8C31;&#x5206;&#x6790;</li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-06-18 20:53:48
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="narray_and_universal_function/narray_and_universal_function.html" class="navigation navigation-next " aria-label="Next page: humpy数组与universal-function">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"科学计算通用数组工具numpy","level":"1.2","depth":1,"next":{"title":"humpy数组与universal-function","level":"1.2.1","depth":2,"path":"numpy/narray_and_universal_function/narray_and_universal_function.md","ref":"numpy/narray_and_universal_function/narray_and_universal_function.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://gitbook.zhangjikai.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python攻略--消息队列","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍消息队列的原理和使用方法,介绍python常用的消息队列工具"},"file":{"path":"numpy/README.md","mtime":"2017-06-18T12:53:48.454Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T13:32:42.116Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
