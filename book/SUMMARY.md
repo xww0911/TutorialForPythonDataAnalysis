@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [科学计算通用数组工具numpy](numpy/README.md)
-    * [humpy数组与universal-function](numpy/narray_and_universal_function/narray_and_universal_function.md)
+    * [numpy数组与universal-function](numpy/narray_and_universal_function/narray_and_universal_function.md)
     * [numpy数组的元素类型和随机操作](numpy/element_type_op_and_random/element_type_op_and_random.md)
     * [多项式与线性代数计算](numpy/Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.md)
     * [numpy的统计学工具](numpy/statistics/statistics.md)
