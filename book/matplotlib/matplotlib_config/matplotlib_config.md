@@ -1047,9 +1047,9 @@ backend      : tkagg
 
 字体文件可以在[这里下载](https://raw.githubusercontent.com/hsz1273327/TutorialForPythonDataAnalysis/master/ipynbs/matplotlib/source/msyh.ttf),本文用到的两个配置文件在这里可以下载:
 
-+ chinese_support.mplstyle
++ [chinese_support.mplstyle](https://raw.githubusercontent.com/hsz1273327/TutorialForPythonDataAnalysis/master/ipynbs/matplotlib/source/chinese_support.mplstyle)
 
-+ animation_support.mplstyle
++ [animation_support.mplstyle](https://raw.githubusercontent.com/hsz1273327/TutorialForPythonDataAnalysis/master/ipynbs/matplotlib/source/animation_support.mplstyle)
 
 
 查看自己有哪些字体可以使用如下命令

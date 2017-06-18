@@ -1,0 +1,688 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>金融信息爬取 · python攻略--消息队列</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="hsz">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../结语.md" />
+    
+    
+    <link rel="prev" href="../with_webtech" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.hszofficial.site/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    可视化工具matplotlib
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../matplotlib_config/matplotlib_config.html">
+            
+                <a href="../matplotlib_config/matplotlib_config.html">
+            
+                    
+                    matplotlib设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../pyplot/pyplot.html">
+            
+                <a href="../pyplot/pyplot.html">
+            
+                    
+                    pyplot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Sankey_diagram/Sankey_diagram.html">
+            
+                <a href="../Sankey_diagram/Sankey_diagram.html">
+            
+                    
+                    桑基图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../triangular_grids/triangular_grids.html">
+            
+                <a href="../triangular_grids/triangular_grids.html">
+            
+                    
+                    非结构图形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../load_image/load_image.html">
+            
+                <a href="../load_image/load_image.html">
+            
+                    
+                    图片加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../save_img/save_img.html">
+            
+                <a href="../save_img/save_img.html">
+            
+                    
+                    图片保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../animation/animation.html">
+            
+                <a href="../animation/animation.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../widgets.html">
+            
+                <a href="../widgets.html">
+            
+                    
+                    matplotlib控件与交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../with_webtech">
+            
+                <span>
+            
+                    
+                    与web技术结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="finance.html">
+            
+                <a href="finance.html">
+            
+                    
+                    金融信息爬取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../结语.md">
+            
+                <span>
+            
+                    
+                    结语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >金融信息爬取</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#finance&#x6A21;&#x5757;"><b>1. </b>finance&#x6A21;&#x5757;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6570;&#x636E;&#x83B7;&#x53D6;"><b>1.1. </b>&#x6570;&#x636E;&#x83B7;&#x53D6;:</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#matplotlibfinancefetchhistoricalyahooticker-date1-date2-cachenamenone-dividendsfalse"><b>1.1.1. </b>matplotlib.finance.fetch_historical_yahoo(ticker, date1, date2, cachename=None, dividends=False)</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7ED8;&#x5236;k&#x7EBF;&#x56FE;"><b>1.2. </b>&#x7ED8;&#x5236;k&#x7EBF;&#x56FE;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;"><b>1.2.1. </b>&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;"><b>1.2.2. </b>&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7ED8;&#x5236;&#x5929;&#x7684;&#x6570;&#x636E;"><b>1.3. </b>&#x7ED8;&#x5236;&#x5929;&#x7684;&#x6570;&#x636E;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;_1"><b>1.3.1. </b>&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;_1"><b>1.3.2. </b>&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6210;&#x4EA4;&#x91CF;&#x76F8;&#x5173;&#x7684;&#x56FE;&#x5F62;"><b>1.4. </b>&#x6210;&#x4EA4;&#x91CF;&#x76F8;&#x5173;&#x7684;&#x56FE;&#x5F62;</a></li></ul></ul></div><a href="#finance&#x6A21;&#x5757;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="finance&#x6A21;&#x5757;"><a name="finance&#x6A21;&#x5757;" class="anchor-navigation-ex-anchor" href="#finance&#x6A21;&#x5757;"><i class="fa fa-link" aria-hidden="true"></i></a>1. finance&#x6A21;&#x5757;</h1>
+<p>matplotlib.finance&#x662F;matplotlib&#x5305;&#x4E2D;&#x552F;&#x4E00;&#x548C;&#x56FE;&#x5F62;&#x56FE;&#x50CF;&#x6CA1;&#x5565;&#x5173;&#x7CFB;&#x7684;&#x4E00;&#x4E2A;&#x6A21;&#x5757;</p>
+<p>&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6536;&#x96C6;&#xFF0C;&#x5206;&#x6790;&#x548C;&#x7ED8;&#x5236;&#x8D22;&#x52A1;&#x6570;&#x636E;&#x7684;&#x529F;&#x80FD;&#x96C6;&#x5408;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-keyword">from</span> matplotlib.finance <span class="hljs-keyword">import</span> quotes_historical_yahoo_ochl ,fetch_historical_yahoo,quotes_historical_yahoo_ohlc
+<span class="hljs-keyword">from</span> matplotlib.dates <span class="hljs-keyword">import</span> YearLocator, MonthLocator, DateFormatter  ,WeekdayLocator,MONDAY,DayLocator
+<span class="hljs-keyword">from</span> matplotlib.finance <span class="hljs-keyword">import</span> parse_yahoo_historical_ochl,parse_yahoo_historical_ohlc
+<span class="hljs-keyword">import</span> datetime  
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+</code></pre>
+<pre><code>/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/matplotlib/cbook.py:136: MatplotlibDeprecationWarning: The finance module has been deprecated in mpl 2.0 and will be removed in mpl 2.2. Please use the module mpl_finance instead.
+  warnings.warn(message, mplDeprecation, stacklevel=1)
+</code></pre><pre><code class="lang-python">%matplotlib inline
+</code></pre>
+<pre><code class="lang-python">plt.style.use(<span class="hljs-string">&apos;chinese_support&apos;</span>)
+</code></pre>
+<h2 id="&#x6570;&#x636E;&#x83B7;&#x53D6;"><a name="&#x6570;&#x636E;&#x83B7;&#x53D6;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x83B7;&#x53D6;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x6570;&#x636E;&#x83B7;&#x53D6;:</h2>
+<ul>
+<li><h3 id="matplotlibfinancefetchhistoricalyahooticker-date1-date2-cachenamenone-dividendsfalse"><a name="matplotlibfinancefetchhistoricalyahooticker-date1-date2-cachenamenone-dividendsfalse" class="anchor-navigation-ex-anchor" href="#matplotlibfinancefetchhistoricalyahooticker-date1-date2-cachenamenone-dividendsfalse"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. matplotlib.finance.fetch_historical_yahoo(ticker, date1, date2, cachename=None, dividends=False)</h3>
+</li>
+</ul>
+<p>&#x5728;date1&#x548C;date2&#x4E4B;&#x95F4;&#x83B7;&#x53D6;&#x4EE3;&#x7801;&#x7684;&#x5386;&#x53F2;&#x6570;&#x636E;&#x3002;date1&#x548C;date2&#x662F;&#x65E5;&#x671F;&#x6216;datetime&#x5B9E;&#x4F8B;&#xFF0C;&#x6216;&#xFF08;&#x5E74;&#xFF0C;&#x6708;&#xFF0C;&#x65E5;&#xFF09;&#x5E8F;&#x5217;&#x3002;
+&#x5176;&#x4E2D;<code>dividends = True</code>&#x5219;&#x8FD4;&#x56DE;&#x80A1;&#x606F;&#x800C;&#x4E0D;&#x662F;&#x4EF7;&#x683C;&#x6570;&#x636E;&#x3002;&#x4F7F;&#x7528;&#x6B64;&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#xFF0C;&#x89E3;&#x6790;&#x51FD;&#x6570;&#x5C06;&#x4E0D;&#x5DE5;&#x4F5C;.&#x5B83;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6253;&#x5F00;&#x7684;file&#x5BF9;&#x8C61;,&#x4EE5;&#x6807;&#x666E;500&#x4E3A;&#x4F8B;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> fetch_historical_yahoo(<span class="hljs-string">&apos;^GSPC&apos;</span>, (<span class="hljs-number">2000</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>), (<span class="hljs-number">2001</span>, <span class="hljs-number">12</span>, <span class="hljs-number">31</span>)) <span class="hljs-keyword">as</span> fh:
+    print(fh.readlines()[:<span class="hljs-number">5</span>])
+</code></pre>
+<pre><code>[&apos;Date,Open,High,Low,Close,Volume,Adj Close\n&apos;, &apos;2001-12-31,1161.02002,1161.160034,1148.040039,1148.079956,943600000,1148.079956\n&apos;, &apos;2001-12-28,1157.130005,1164.640015,1157.130005,1161.02002,917400000,1161.02002\n&apos;, &apos;2001-12-27,1149.369995,1157.130005,1149.369995,1157.130005,876300000,1157.130005\n&apos;, &apos;2001-12-26,1144.650024,1159.180054,1144.650024,1149.369995,791100000,1149.369995\n&apos;]
+</code></pre><p>&#x56E0;&#x4E3A;&#x83B7;&#x53D6;&#x7684;&#x662F;&#x6587;&#x4EF6;&#x7C7B;&#x578B;,finance&#x6A21;&#x5757;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x89E3;&#x6790;&#x5DE5;&#x5177;</p>
+<ul>
+<li><p><code>matplotlib.finance.parse_yahoo_historical_ohlc(fh, adjusted=True, asobject=False)</code></p>
+<p>  &#x8F93;&#x51FA;&#x5BF9;&#x5E94;(&#x65F6;&#x95F4;&#x6233;,&#x5F00;&#x5E02;,&#x6700;&#x9AD8;,&#x6700;&#x4F4E;,&#x95ED;&#x5E02;,&#x6210;&#x4EA4;&#x91CF;)</p>
+</li>
+</ul>
+<ul>
+<li><p><code>matplotlib.finance.parse_yahoo_historical_ochl(fh, adjusted=True, asobject=False)</code></p>
+<p>  &#x8F93;&#x51FA;&#x5BF9;&#x5E94;(&#x65F6;&#x95F4;&#x6233;,&#x5F00;&#x5E02;,&#x95ED;&#x5E02;,&#x6700;&#x9AD8;,&#x6700;&#x4F4E;,&#x6210;&#x4EA4;&#x91CF;)</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">with</span> fetch_historical_yahoo(<span class="hljs-string">&apos;^GSPC&apos;</span>, (<span class="hljs-number">2015</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>), (<span class="hljs-number">2016</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>)) <span class="hljs-keyword">as</span> fh:
+    print(parse_yahoo_historical_ohlc(fh)[:<span class="hljs-number">5</span>])
+</code></pre>
+<pre><code>[(735953.0, 2010.2700199999999, 2022.900024, 2005.9300539999999, 2021.150024, 3760280000.0), (735954.0, 2023.150024, 2042.73999, 2020.48999, 2038.969971, 3520860000.0), (735955.0, 2042.1999510000001, 2064.7299800000001, 2042.1999510000001, 2064.290039, 3484090000.0), (735956.0, 2063.5200199999999, 2067.360107, 2058.7299800000001, 2060.98999, 1411860000.0), (735960.0, 2057.7700199999999, 2057.7700199999999, 2044.1999510000001, 2056.5, 2492510000.0)]
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">with</span> fetch_historical_yahoo(<span class="hljs-string">&apos;^GSPC&apos;</span>, (<span class="hljs-number">2015</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>), (<span class="hljs-number">2016</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>)) <span class="hljs-keyword">as</span> fh:
+    print(parse_yahoo_historical_ochl(fh)[:<span class="hljs-number">5</span>])
+</code></pre>
+<pre><code>[(735953.0, 2010.2700199999999, 2021.150024, 2022.900024, 2005.9300539999999, 3760280000.0), (735954.0, 2023.150024, 2038.969971, 2042.73999, 2020.48999, 3520860000.0), (735955.0, 2042.1999510000001, 2064.290039, 2064.7299800000001, 2042.1999510000001, 3484090000.0), (735956.0, 2063.5200199999999, 2060.98999, 2067.360107, 2058.7299800000001, 1411860000.0), (735960.0, 2057.7700199999999, 2056.5, 2057.7700199999999, 2044.1999510000001, 2492510000.0)]
+</code></pre><p>&#x800C;&#x4E0B;&#x4E24;&#x4E2A;&#x5219;&#x662F;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x89E3;&#x6790;&#x597D;&#x7684;&#x7ED3;&#x679C;</p>
+<ul>
+<li><p><code>matplotlib.finance.quotes_historical_yahoo_ochl(ticker, date1, date2, asobject=False, adjusted=True, cachename=None)</code></p>
+</li>
+<li><p><code>matplotlib.finance.quotes_historical_yahoo_ohlc(ticker, date1, date2, asobject=False, adjusted=True, cachename=None)</code></p>
+</li>
+</ul>
+<pre><code class="lang-python">quotes_historical_yahoo_ochl(<span class="hljs-string">&apos;^GSPC&apos;</span>, (<span class="hljs-number">2015</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>), (<span class="hljs-number">2016</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>))[:<span class="hljs-number">2</span>]
+</code></pre>
+<pre><code>[(735953.0,
+  2010.2700199999999,
+  2021.150024,
+  2022.900024,
+  2005.9300539999999,
+  3760280000.0),
+ (735954.0, 2023.150024, 2038.969971, 2042.73999, 2020.48999, 3520860000.0)]
+</code></pre><pre><code class="lang-python">quotes_historical_yahoo_ohlc(<span class="hljs-string">&apos;^GSPC&apos;</span>, (<span class="hljs-number">2015</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>), (<span class="hljs-number">2016</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>))[:<span class="hljs-number">2</span>]
+</code></pre>
+<pre><code>[(735953.0,
+  2010.2700199999999,
+  2022.900024,
+  2005.9300539999999,
+  2021.150024,
+  3760280000.0),
+ (735954.0, 2023.150024, 2042.73999, 2020.48999, 2038.969971, 3520860000.0)]
+</code></pre><h2 id="&#x7ED8;&#x5236;k&#x7EBF;&#x56FE;"><a name="&#x7ED8;&#x5236;k&#x7EBF;&#x56FE;" class="anchor-navigation-ex-anchor" href="#&#x7ED8;&#x5236;k&#x7EBF;&#x56FE;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x7ED8;&#x5236;k&#x7EBF;&#x56FE;</h2>
+<h3 id="&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;"><a name="&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.1. &#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;</h3>
+<ul>
+<li><p><code>matplotlib.finance.candlestick2_ochl(ax, opens, closes, highs, lows, width=4, colorup=&apos;k&apos;, colordown=&apos;r&apos;, alpha=0.75)</code>
+  &#x8F93;&#x5165;&#x5BF9;&#x5E94;(&#x65F6;&#x95F4;&#x6233;,&#x5F00;&#x5E02;,&#x95ED;&#x5E02;,&#x6700;&#x9AD8;,&#x6700;&#x4F4E;,&#x6210;&#x4EA4;&#x91CF;)</p>
+</li>
+<li><p><code>matplotlib.finance.candlestick2_ohlc(ax, opens, highs, lows, closes, width=4, colorup=&apos;k&apos;, colordown=&apos;r&apos;, alpha=0.75)</code>
+  &#x8F93;&#x5165;&#x5BF9;&#x5E94;(&#x65F6;&#x95F4;&#x6233;,&#x5F00;&#x5E02;,&#x6700;&#x9AD8;,&#x6700;&#x4F4E;,&#x95ED;&#x5E02;,&#x6210;&#x4EA4;&#x91CF;)</p>
+</li>
+</ul>
+<h3 id="&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;"><a name="&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. &#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;</h3>
+<ul>
+<li><p><code>matplotlib.finance.candlestick_ochl(ax, quotes, width=0.2, colorup=&apos;k&apos;, colordown=&apos;r&apos;, alpha=1.0)</code>
+  &#x8F93;&#x5165;&#x5BF9;&#x5E94;(&#x65F6;&#x95F4;&#x6233;,&#x5F00;&#x5E02;,&#x95ED;&#x5E02;,&#x6700;&#x9AD8;,&#x6700;&#x4F4E;,&#x6210;&#x4EA4;&#x91CF;)</p>
+</li>
+<li><p><code>matplotlib.finance.candlestick_ohlc(ax, quotes, width=0.2, colorup=&apos;k&apos;, colordown=&apos;r&apos;, alpha=1.0)</code>
+  &#x8F93;&#x5165;&#x5BF9;&#x5E94;(&#x65F6;&#x95F4;&#x6233;,&#x5F00;&#x5E02;,&#x6700;&#x9AD8;,&#x6700;&#x4F4E;,&#x95ED;&#x5E02;,&#x6210;&#x4EA4;&#x91CF;)</p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> matplotlib.finance <span class="hljs-keyword">import</span> candlestick2_ochl,candlestick2_ohlc,candlestick_ochl,candlestick_ohlc
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x8BBE;&#x7F6E;x&#x8F74;&#x5750;&#x6807;&#x523B;&#x5EA6;</span>
+mondays = WeekdayLocator(MONDAY)            <span class="hljs-comment"># &#x4E3B;&#x8981;&#x523B;&#x5EA6;</span>
+alldays = DayLocator()                      <span class="hljs-comment"># &#x6B21;&#x8981;&#x523B;&#x5EA6;</span>
+
+mondayFormatter = DateFormatter(<span class="hljs-string">&apos;%m-%d-%Y&apos;</span>) <span class="hljs-comment"># &#x5982;&#xFF1A;2-29-2015</span>
+dayFormatter = DateFormatter(<span class="hljs-string">&apos;%d&apos;</span>)
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x6570;&#x636E;&#x5904;&#x7406;</span>
+quotes_ochl = quotes_historical_yahoo_ochl(<span class="hljs-string">&apos;^GSPC&apos;</span>, (<span class="hljs-number">2015</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>), (<span class="hljs-number">2016</span>, <span class="hljs-number">6</span>, <span class="hljs-number">20</span>))
+
+ochl = np.array(quotes_ochl).T[<span class="hljs-number">1</span>:<span class="hljs-number">-1</span>]
+quotes_ohlc = quotes_historical_yahoo_ohlc(<span class="hljs-string">&apos;^GSPC&apos;</span>, (<span class="hljs-number">2015</span>, <span class="hljs-number">12</span>, <span class="hljs-number">20</span>), (<span class="hljs-number">2016</span>, <span class="hljs-number">6</span>, <span class="hljs-number">20</span>))
+ohlc = np.array(quotes_ohlc).T[<span class="hljs-number">1</span>:<span class="hljs-number">-1</span>]
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BBE;&#x7F6E;x&#x5750;&#x6807;&#x8F74;</span>
+fig, ax = plt.subplots()
+fig.subplots_adjust(bottom=<span class="hljs-number">0.2</span>)
+
+ax.xaxis.set_major_locator(mondays)
+ax.xaxis.set_minor_locator(alldays)
+ax.xaxis.set_major_formatter(mondayFormatter)
+
+
+<span class="hljs-comment"># &#x7ED8;&#x5236;&#x56FE;&#x5F62;</span>
+candlestick_ohlc(ax, quotes_ohlc, width=<span class="hljs-number">0.6</span>, colorup=<span class="hljs-string">&apos;r&apos;</span>, colordown=<span class="hljs-string">&apos;g&apos;</span>)
+ax.xaxis_date()
+ax.autoscale_view()
+plt.setp(plt.gca().get_xticklabels(), rotation=<span class="hljs-number">45</span>, horizontalalignment=<span class="hljs-string">&apos;right&apos;</span>)
+
+ax.grid(<span class="hljs-keyword">True</span>)
+plt.title(<span class="hljs-string">u&apos;&#x6807;&#x666E;500&apos;</span>)
+plt.show()
+</code></pre>
+<p><img src="output_16_0.png" alt="png"></p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BBE;&#x7F6E;x&#x5750;&#x6807;&#x8F74;</span>
+fig, ax = plt.subplots()
+fig.subplots_adjust(bottom=<span class="hljs-number">0.2</span>)
+
+ax.xaxis.set_major_locator(mondays)
+ax.xaxis.set_minor_locator(alldays)
+ax.xaxis.set_major_formatter(mondayFormatter)
+
+
+<span class="hljs-comment"># &#x7ED8;&#x5236;&#x56FE;&#x5F62;</span>
+o,h,l,c = ohlc
+candlestick2_ohlc(ax, o,h,l,c , width=<span class="hljs-number">0.6</span>, colorup=<span class="hljs-string">&apos;r&apos;</span>, colordown=<span class="hljs-string">&apos;g&apos;</span>)
+ax.xaxis_date()
+ax.autoscale_view()
+plt.setp(plt.gca().get_xticklabels(), rotation=<span class="hljs-number">45</span>, horizontalalignment=<span class="hljs-string">&apos;right&apos;</span>)
+
+ax.grid(<span class="hljs-keyword">True</span>)
+plt.title(<span class="hljs-string">u&apos;&#x6807;&#x666E;500&apos;</span>)
+plt.show()
+</code></pre>
+<p><img src="output_17_0.png" alt="png"></p>
+<h2 id="&#x7ED8;&#x5236;&#x5929;&#x7684;&#x6570;&#x636E;"><a name="&#x7ED8;&#x5236;&#x5929;&#x7684;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x7ED8;&#x5236;&#x5929;&#x7684;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x7ED8;&#x5236;&#x5929;&#x7684;&#x6570;&#x636E;</h2>
+<p>&#x8FD9;&#x79CD;&#x56FE;&#x7684;&#x4E0A;&#x4E0B;&#x67F1;&#x662F;&#x4EA4;&#x6613;&#x7684;&#x6700;&#x9AD8;&#x6700;&#x4F4E;&#x503C;,&#x800C;&#x4FA7;&#x67F1;&#x5219;&#x8868;&#x793A;&#x5F00;&#x76D8;&#x4EF7;&#x548C;&#x6536;&#x76D8;&#x4EF7;</p>
+<h3 id="&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;_1"><a name="&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;_1" class="anchor-navigation-ex-anchor" href="#&#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.1. &#x4EE5;&#x4EF7;&#x683C;&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;</h3>
+<ul>
+<li><p><code>matplotlib.finance.plot_day_summary2_ochl(ax, opens, closes, highs, lows, ticksize=4, colorup=&apos;k&apos;, colordown=&apos;r&apos;)</code></p>
+</li>
+<li><p><code>matplotlib.finance.plot_day_summary2_ohlc(ax, opens, highs, lows, closes, ticksize=4, colorup=&apos;k&apos;, colordown=&apos;r&apos;)</code></p>
+</li>
+</ul>
+<h3 id="&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;_1"><a name="&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;_1" class="anchor-navigation-ex-anchor" href="#&#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.3.2. &#x4EE5;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x539F;&#x59CB;&#x5E8F;&#x5217;&#x4E3A;&#x53C2;&#x6570;</h3>
+<ul>
+<li><p><code>matplotlib.finance.plot_day_summary_oclh(ax, quotes, ticksize=3, colorup=&apos;k&apos;, colordown=&apos;r&apos;)</code></p>
+</li>
+<li><p><code>matplotlib.finance.plot_day_summary_ohlc(ax, quotes, ticksize=3, colorup=&apos;k&apos;, colordown=&apos;r&apos;)</code></p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> matplotlib.finance <span class="hljs-keyword">import</span> plot_day_summary_oclh
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x8BBE;&#x7F6E;x&#x5750;&#x6807;&#x8F74;</span>
+fig, ax = plt.subplots()
+fig.subplots_adjust(bottom=<span class="hljs-number">0.2</span>)
+
+ax.xaxis.set_major_locator(mondays)
+ax.xaxis.set_minor_locator(alldays)
+ax.xaxis.set_major_formatter(mondayFormatter)
+
+plot_day_summary_oclh(ax,quotes_ochl[:<span class="hljs-number">7</span>], ticksize= <span class="hljs-number">10</span>,colorup=<span class="hljs-string">&apos;r&apos;</span>, colordown=<span class="hljs-string">&apos;g&apos;</span>)
+ax.xaxis_date()
+ax.autoscale_view()
+<span class="hljs-comment">#plt.setp(plt.gca().get_xticklabels(), rotation=45, horizontalalignment=&apos;right&apos;)</span>
+
+ax.grid(<span class="hljs-keyword">True</span>)
+plt.title(<span class="hljs-string">u&apos;&#x6807;&#x666E;500&apos;</span>)
+plt.show()
+</code></pre>
+<p><img src="output_20_0.png" alt="png"></p>
+<h2 id="&#x6210;&#x4EA4;&#x91CF;&#x76F8;&#x5173;&#x7684;&#x56FE;&#x5F62;"><a name="&#x6210;&#x4EA4;&#x91CF;&#x76F8;&#x5173;&#x7684;&#x56FE;&#x5F62;" class="anchor-navigation-ex-anchor" href="#&#x6210;&#x4EA4;&#x91CF;&#x76F8;&#x5173;&#x7684;&#x56FE;&#x5F62;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x6210;&#x4EA4;&#x91CF;&#x76F8;&#x5173;&#x7684;&#x56FE;&#x5F62;</h2>
+<ul>
+<li><p><code>matplotlib.finance.index_bar(ax, vals, facecolor=&apos;b&apos;, edgecolor=&apos;l&apos;, width=4, alpha=1.0)</code></p>
+</li>
+<li><p><code>matplotlib.finance.volume_overlay(ax, opens, closes, volumes, colorup=&apos;k&apos;, colordown=&apos;r&apos;, width=4, alpha=1.0)</code></p>
+</li>
+<li><p><code>matplotlib.finance.volume_overlay2(ax, closes, volumes, colorup=&apos;k&apos;, colordown=&apos;r&apos;, width=4, alpha=1.0)</code></p>
+</li>
+<li><p><code>matplotlib.finance.volume_overlay3(ax, quotes, colorup=&apos;k&apos;, colordown=&apos;r&apos;, width=4, alpha=1.0)</code></p>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> matplotlib.finance <span class="hljs-keyword">import</span> index_bar,volume_overlay3
+</code></pre>
+<pre><code class="lang-python">volume = np.array(quotes_ochl).T[<span class="hljs-number">-1</span>]/<span class="hljs-number">10000000000</span>
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-comment">#fig = plt.figure(figsize=(12,16))</span>
+
+
+fig ,subplots=plt.subplots(<span class="hljs-number">3</span>,<span class="hljs-number">1</span>)
+plt.title(<span class="hljs-string">u&apos;&#x6807;&#x666E;500&apos;</span>)
+
+fig.set_size_inches((<span class="hljs-number">12</span>,<span class="hljs-number">16</span>))
+<span class="hljs-keyword">for</span> i,ax <span class="hljs-keyword">in</span> enumerate(subplots):
+    ax.xaxis.set_major_locator(mondays)
+    ax.xaxis.set_minor_locator(alldays)
+    ax.xaxis.set_major_formatter(mondayFormatter)
+    <span class="hljs-keyword">if</span> i == <span class="hljs-number">0</span>:
+        ax.set_ylabel(<span class="hljs-string">u&apos;&#x4EF7;&#x683C;&apos;</span>)
+
+        candlestick_ohlc(ax, quotes_ohlc, width=<span class="hljs-number">0.6</span>, colorup=<span class="hljs-string">&apos;r&apos;</span>, colordown=<span class="hljs-string">&apos;g&apos;</span>)        
+    <span class="hljs-keyword">elif</span> i ==<span class="hljs-number">1</span>:
+        ax.set_ylabel(<span class="hljs-string">u&apos;&#x6210;&#x4EA4;&#x91CF;&apos;</span>)
+
+        index_bar(ax,volume,facecolor=<span class="hljs-string">&apos;b&apos;</span>, edgecolor=<span class="hljs-string">&apos;r&apos;</span>)
+    <span class="hljs-keyword">else</span>:
+        ax.set_ylabel(<span class="hljs-string">u&apos;&#x6210;&#x4EA4;&#x91CF;&#x9762;&#x79EF;&apos;</span>)
+        ax.set_ylim((<span class="hljs-number">0</span>, <span class="hljs-number">1e10</span>))
+
+        v = volume_overlay3(ax, quotes_ohlc)
+
+
+    ax.xaxis_date()
+    ax.autoscale_view()
+    plt.setp(plt.gca().get_xticklabels(), rotation=<span class="hljs-number">45</span>, horizontalalignment=<span class="hljs-string">&apos;right&apos;</span>)
+    ax.grid(<span class="hljs-keyword">True</span>)
+plt.show()
+</code></pre>
+<p><img src="output_24_0.png" alt="png"></p>
+<pre><code class="lang-python">
+
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-06-18 17:08:38
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../with_webtech" class="navigation navigation-prev " aria-label="Previous page: 与web技术结合">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../结语.md" class="navigation navigation-next " aria-label="Next page: 结语">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"金融信息爬取","level":"1.2.10","depth":2,"next":{"title":"结语","level":"1.2.11","depth":2,"path":"matplotlib/结语.md","ref":"matplotlib/结语.md","articles":[]},"previous":{"title":"与web技术结合","level":"1.2.9","depth":2,"path":"matplotlib/with_webtech","ref":"matplotlib/with_webtech","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","katex","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://gitbook.zhangjikai.com"},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python攻略--消息队列","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍消息队列的原理和使用方法,介绍python常用的消息队列工具"},"file":{"path":"matplotlib/finance/finance.md","mtime":"2017-06-18T09:08:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T10:34:02.886Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
