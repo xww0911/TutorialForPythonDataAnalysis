@@ -8,7 +8,8 @@
     * [numpy的统计学工具](numpy/statistics/statistics.md)
     * [numpy的财务分析工具](numpy/Financial_functions.md)
     * [频谱分析](numpy/frequency_analysis/frequency_analysis.md)
-* [结构化数据处理工具pandas](pandasy/README.md)
+
+* [结构化数据处理工具pandas](pandas/README.md)
     * [表格基本操作](pandas/basic_operation.md)
     * [数据清洗](pandas/Munging_Data.md)
     * [分组与集聚](pandas/Grouping_and_clustering.md)
@@ -16,6 +17,7 @@
     * [统计分析](pandas/statistical_analysis/statistical_analysis.md)
     * [数据可视化](pandas/Visualization/Visualization.md)
     * [数据获取与保存](pandas/data_procurement.md)
+
 * [可视化工具matplotlib](matplotlib/README.md)
     * [matplotlib设置](matplotlib/matplotlib_config/matplotlib_config.md)
     * [pyplot](matplotlib/pyplot/pyplot.md)
