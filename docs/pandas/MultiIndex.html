@@ -1,0 +1,1867 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>复合索引 · python攻略--消息队列</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="hsz">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="statistical_analysis/statistical_analysis.html" />
+    
+    
+    <link rel="prev" href="Grouping_and_clustering.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.hszofficial.site/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../numpy/">
+            
+                <a href="../numpy/">
+            
+                    
+                    科学计算通用数组工具numpy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../numpy/narray_and_universal_function/narray_and_universal_function.html">
+            
+                <a href="../numpy/narray_and_universal_function/narray_and_universal_function.html">
+            
+                    
+                    humpy数组与universal-function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../numpy/element_type_op_and_random/element_type_op_and_random.html">
+            
+                <a href="../numpy/element_type_op_and_random/element_type_op_and_random.html">
+            
+                    
+                    numpy数组的元素类型和随机操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../numpy/Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+            
+                <a href="../numpy/Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+            
+                    
+                    多项式与线性代数计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../numpy/statistics/statistics.html">
+            
+                <a href="../numpy/statistics/statistics.html">
+            
+                    
+                    numpy的统计学工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../numpy/Financial_functions.html">
+            
+                <a href="../numpy/Financial_functions.html">
+            
+                    
+                    numpy的财务分析工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../numpy/frequency_analysis/frequency_analysis.html">
+            
+                <a href="../numpy/frequency_analysis/frequency_analysis.html">
+            
+                    
+                    频谱分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../pandasy/README.md">
+            
+                <span>
+            
+                    
+                    结构化数据处理工具pandas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="basic_operation.html">
+            
+                <a href="basic_operation.html">
+            
+                    
+                    表格基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Munging_Data.html">
+            
+                <a href="Munging_Data.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="Grouping_and_clustering.html">
+            
+                <a href="Grouping_and_clustering.html">
+            
+                    
+                    分组与集聚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.4" data-path="MultiIndex.html">
+            
+                <a href="MultiIndex.html">
+            
+                    
+                    复合索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="statistical_analysis/statistical_analysis.html">
+            
+                <a href="statistical_analysis/statistical_analysis.html">
+            
+                    
+                    统计分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="Visualization/Visualization.html">
+            
+                <a href="Visualization/Visualization.html">
+            
+                    
+                    数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="data_procurement.html">
+            
+                <a href="data_procurement.html">
+            
+                    
+                    数据获取与保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../matplotlib/">
+            
+                <a href="../matplotlib/">
+            
+                    
+                    可视化工具matplotlib
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                <a href="../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                    
+                    matplotlib设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../matplotlib/pyplot/pyplot.html">
+            
+                <a href="../matplotlib/pyplot/pyplot.html">
+            
+                    
+                    pyplot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                <a href="../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                    
+                    桑基图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../matplotlib/triangular_grids/triangular_grids.html">
+            
+                <a href="../matplotlib/triangular_grids/triangular_grids.html">
+            
+                    
+                    非结构图形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../matplotlib/load_image/load_image.html">
+            
+                <a href="../matplotlib/load_image/load_image.html">
+            
+                    
+                    图片加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../matplotlib/save_img/save_img.html">
+            
+                <a href="../matplotlib/save_img/save_img.html">
+            
+                    
+                    图片保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../matplotlib/animation/animation.html">
+            
+                <a href="../matplotlib/animation/animation.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../matplotlib/widgets.html">
+            
+                <a href="../matplotlib/widgets.html">
+            
+                    
+                    matplotlib控件与交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../matplotlib/with_webtech">
+            
+                <span>
+            
+                    
+                    与web技术结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../matplotlib/finance/finance.html">
+            
+                <a href="../matplotlib/finance/finance.html">
+            
+                    
+                    金融信息爬取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../matplotlib/结语.html">
+            
+                <a href="../matplotlib/结语.html">
+            
+                    
+                    结语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >复合索引</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x590D;&#x5408;&#x7D22;&#x5F15;"><b>1. </b>&#x590D;&#x5408;&#x7D22;&#x5F15;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5206;&#x5C42;&#x7D22;&#x5F15;"><b>1.1. </b>&#x5206;&#x5C42;&#x7D22;&#x5F15;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x521B;&#x5EFA;&#x5206;&#x5C42;&#x7D22;&#x5F15;"><b>1.1.1. </b>&#x521B;&#x5EFA;&#x5206;&#x5C42;&#x7D22;&#x5F15;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x5C06;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x5E94;&#x7528;&#x4E8E;&#x5217;"><b>1.1.2. </b>&#x5C06;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x5E94;&#x7528;&#x4E8E;&#x5217;</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x91CD;&#x5EFA;&#x7EA7;&#x522B;&#x6807;&#x7B7E;"><b>1.2. </b>&#x91CD;&#x5EFA;&#x7EA7;&#x522B;&#x6807;&#x7B7E;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4F7F;&#x7528;multiindex&#x5728;&#x8F74;&#x4E0A;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x7D22;&#x5F15;"><b>1.3. </b>&#x4F7F;&#x7528;MultiIndex&#x5728;&#x8F74;&#x4E0A;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x7D22;&#x5F15;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x548C;&#x4F7F;&#x7528;reindex"><b>1.4. </b>&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x548C;&#x4F7F;&#x7528;reindex</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x9AD8;&#x7EA7;&#x7D22;&#x5F15;&#x4E0E;&#x5C42;&#x6B21;&#x7D22;&#x5F15;"><b>1.5. </b>&#x9AD8;&#x7EA7;&#x7D22;&#x5F15;&#x4E0E;&#x5C42;&#x6B21;&#x7D22;&#x5F15;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4F7F;&#x7528;swaplevel&#xFF08;&#xFF09;&#x4EA4;&#x6362;&#x7EA7;&#x522B;"><b>1.6. </b>&#x4F7F;&#x7528;swaplevel&#xFF08;&#xFF09;&#x4EA4;&#x6362;&#x7EA7;&#x522B;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4F7F;&#x7528;reorderlevels&#xFF08;&#xFF09;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x7EA7;&#x522B;"><b>1.7. </b>&#x4F7F;&#x7528;reorder_levels&#xFF08;&#xFF09;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x7EA7;&#x522B;</a></li></ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#categoricalindex"><b>2. </b>CategoricalIndex</a></li></ul></div><a href="#&#x590D;&#x5408;&#x7D22;&#x5F15;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x590D;&#x5408;&#x7D22;&#x5F15;"><a name="&#x590D;&#x5408;&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#&#x590D;&#x5408;&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x590D;&#x5408;&#x7D22;&#x5F15;</h1>
+<p>&#x9664;&#x4E86;&#x5E38;&#x89C4;&#x7684;&#x7D22;&#x5F15;&#x65B9;&#x5F0F;,pandas&#x8FD8;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x590D;&#x5408;&#x7D22;&#x5F15;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+</code></pre>
+<h2 id="&#x5206;&#x5C42;&#x7D22;&#x5F15;"><a name="&#x5206;&#x5C42;&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#&#x5206;&#x5C42;&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x5206;&#x5C42;&#x7D22;&#x5F15;</h2>
+<p>&#x5206;&#x5C42;/&#x591A;&#x7EA7;&#x7D22;&#x5F15;&#x662F;&#x975E;&#x5E38;&#x4EE4;&#x4EBA;&#x5174;&#x594B;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x6253;&#x5F00;&#x4E86;&#x4E00;&#x4E9B;&#x975E;&#x5E38;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x5206;&#x6790;&#x548C;&#x64CD;&#x4F5C;&#x7684;&#x95E8;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5BF9;&#x4E8E;&#x66F4;&#x9AD8;&#x7EF4;&#x6570;&#x636E;&#x7684;&#x5904;&#x7406;&#x3002;
+&#x5B9E;&#x8D28;&#x4E0A;&#xFF0C;&#x5B83;&#x4F7F;&#x4F60;&#x80FD;&#x591F;&#x5728;&#x8BF8;&#x5982;Series&#xFF08;1d&#xFF09;&#x548C;DataFrame&#xFF08;2d&#xFF09;&#x7684;&#x4F4E;&#x7EF4;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x4E2D;&#x5B58;&#x50A8;&#x548C;&#x64CD;&#x4F5C;&#x5177;&#x6709;&#x4EFB;&#x610F;&#x6570;&#x91CF;&#x7EF4;&#x5EA6;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h3 id="&#x521B;&#x5EFA;&#x5206;&#x5C42;&#x7D22;&#x5F15;"><a name="&#x521B;&#x5EFA;&#x5206;&#x5C42;&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x5206;&#x5C42;&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.1. &#x521B;&#x5EFA;&#x5206;&#x5C42;&#x7D22;&#x5F15;</h3>
+<p>&#x521B;&#x5EFA;&#x5206;&#x5C42;&#x7D22;&#x5F15;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;</p>
+<ul>
+<li><p><code>pd.MultiIndex.from_tuples</code> &#x4ECE;&#x5143;&#x7956;&#x521B;&#x5EFA;</p>
+</li>
+<li><p><code>pd.MultiIndex.from_product</code>&#x5F53;&#x4F60;&#x60F3;&#x8981;&#x5728;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x7684;&#x914D;&#x5BF9;&#x65F6;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;</p>
+</li>
+<li><p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x6570;&#x7EC4;&#x5217;&#x8868;&#x76F4;&#x63A5;&#x4F20;&#x9012;&#x5230;Series&#x6216;DataFrame&#xFF0C;&#x4EE5;&#x81EA;&#x52A8;&#x6784;&#x5EFA;MultiIndex&#xFF1A;</p>
+</li>
+</ul>
+<pre><code class="lang-python">arrays = [[<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;qux&apos;</span>, <span class="hljs-string">&apos;qux&apos;</span>],
+          [<span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>]]
+</code></pre>
+<pre><code class="lang-python">tuples = list(zip(*arrays))
+</code></pre>
+<pre><code class="lang-python">tuples
+</code></pre>
+<pre><code>[(&apos;bar&apos;, &apos;one&apos;),
+ (&apos;bar&apos;, &apos;two&apos;),
+ (&apos;baz&apos;, &apos;one&apos;),
+ (&apos;baz&apos;, &apos;two&apos;),
+ (&apos;foo&apos;, &apos;one&apos;),
+ (&apos;foo&apos;, &apos;two&apos;),
+ (&apos;qux&apos;, &apos;one&apos;),
+ (&apos;qux&apos;, &apos;two&apos;)]
+</code></pre><pre><code class="lang-python">index = pd.MultiIndex.from_tuples(tuples, names=[<span class="hljs-string">&apos;first&apos;</span>, <span class="hljs-string">&apos;second&apos;</span>])
+</code></pre>
+<pre><code class="lang-python">index
+</code></pre>
+<pre><code>MultiIndex(levels=[[&apos;bar&apos;, &apos;baz&apos;, &apos;foo&apos;, &apos;qux&apos;], [&apos;one&apos;, &apos;two&apos;]],
+           labels=[[0, 0, 1, 1, 2, 2, 3, 3], [0, 1, 0, 1, 0, 1, 0, 1]],
+           names=[&apos;first&apos;, &apos;second&apos;])
+</code></pre><pre><code class="lang-python">s = pd.Series(np.random.randn(<span class="hljs-number">8</span>), index=index)
+</code></pre>
+<pre><code class="lang-python">s
+</code></pre>
+<pre><code>first  second
+bar    one       1.924541
+       two      -2.127108
+baz    one       0.417056
+       two      -0.378908
+foo    one       0.780429
+       two       1.540210
+qux    one       0.689353
+       two       1.101065
+dtype: float64
+</code></pre><pre><code class="lang-python">iterables = [[<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;qux&apos;</span>], [<span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>]]
+
+pd.MultiIndex.from_product(iterables, names=[<span class="hljs-string">&apos;first&apos;</span>, <span class="hljs-string">&apos;second&apos;</span>])
+</code></pre>
+<pre><code>MultiIndex(levels=[[&apos;bar&apos;, &apos;baz&apos;, &apos;foo&apos;, &apos;qux&apos;], [&apos;one&apos;, &apos;two&apos;]],
+           labels=[[0, 0, 1, 1, 2, 2, 3, 3], [0, 1, 0, 1, 0, 1, 0, 1]],
+           names=[&apos;first&apos;, &apos;second&apos;])
+</code></pre><pre><code class="lang-python">arrays = [np.array([<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;qux&apos;</span>, <span class="hljs-string">&apos;qux&apos;</span>]),
+          np.array([<span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>])]
+s = pd.Series(np.random.randn(<span class="hljs-number">8</span>), index=arrays)
+s
+</code></pre>
+<pre><code>bar  one   -1.221834
+     two   -0.816061
+baz  one    0.134687
+     two    0.143186
+foo  one    0.990110
+     two    0.208515
+qux  one    1.150871
+     two    0.546428
+dtype: float64
+</code></pre><pre><code class="lang-python">df = pd.DataFrame(np.random.randn(<span class="hljs-number">8</span>, <span class="hljs-number">4</span>), index=arrays)
+df
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>one</th>
+      <td>-1.690183</td>
+      <td>0.271540</td>
+      <td>-0.519416</td>
+      <td>-0.109875</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>1.144788</td>
+      <td>0.429944</td>
+      <td>-0.466847</td>
+      <td>-0.475691</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>one</th>
+      <td>-1.384935</td>
+      <td>0.359243</td>
+      <td>0.443673</td>
+      <td>0.283476</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.922243</td>
+      <td>-0.731361</td>
+      <td>0.955463</td>
+      <td>-0.315289</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">foo</th>
+      <th>one</th>
+      <td>-0.725888</td>
+      <td>0.455123</td>
+      <td>-0.978464</td>
+      <td>-0.340143</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.147488</td>
+      <td>-0.077069</td>
+      <td>0.386868</td>
+      <td>-0.910659</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">qux</th>
+      <th>one</th>
+      <td>-0.360796</td>
+      <td>1.773004</td>
+      <td>-0.088235</td>
+      <td>0.107931</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.107048</td>
+      <td>0.659507</td>
+      <td>-0.983554</td>
+      <td>1.220696</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="&#x5C06;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x5E94;&#x7528;&#x4E8E;&#x5217;"><a name="&#x5C06;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x5E94;&#x7528;&#x4E8E;&#x5217;" class="anchor-navigation-ex-anchor" href="#&#x5C06;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x5E94;&#x7528;&#x4E8E;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x5C06;&#x590D;&#x5408;&#x7D22;&#x5F15;&#x5E94;&#x7528;&#x4E8E;&#x5217;</h3>
+<pre><code class="lang-python">df = pd.DataFrame(np.random.randn(<span class="hljs-number">3</span>, <span class="hljs-number">8</span>), index=[<span class="hljs-string">&apos;A&apos;</span>, <span class="hljs-string">&apos;B&apos;</span>, <span class="hljs-string">&apos;C&apos;</span>], columns=index)
+df
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>first</th>
+      <th colspan="2" halign="left">bar</th>
+      <th colspan="2" halign="left">baz</th>
+      <th colspan="2" halign="left">foo</th>
+      <th colspan="2" halign="left">qux</th>
+    </tr>
+    <tr>
+      <th>second</th>
+      <th>one</th>
+      <th>two</th>
+      <th>one</th>
+      <th>two</th>
+      <th>one</th>
+      <th>two</th>
+      <th>one</th>
+      <th>two</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>-0.623886</td>
+      <td>-1.210745</td>
+      <td>-1.247687</td>
+      <td>-1.775733</td>
+      <td>0.071501</td>
+      <td>-0.559662</td>
+      <td>-1.227424</td>
+      <td>0.048207</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.539847</td>
+      <td>1.144010</td>
+      <td>-0.602236</td>
+      <td>0.712611</td>
+      <td>1.933703</td>
+      <td>0.761082</td>
+      <td>0.873890</td>
+      <td>-0.211337</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-0.360050</td>
+      <td>0.518990</td>
+      <td>-0.336434</td>
+      <td>-1.005913</td>
+      <td>1.455619</td>
+      <td>-0.156915</td>
+      <td>-0.131643</td>
+      <td>-1.106066</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>MultiIndex&#x7684;&#x91CD;&#x8981;&#x6027;&#x5728;&#x4E8E;&#xFF0C;&#x5B83;&#x5141;&#x8BB8;&#x60A8;&#x8FDB;&#x884C;&#x5206;&#x7EC4;&#xFF0C;&#x9009;&#x62E9;&#x548C;&#x91CD;&#x5851;&#x64CD;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5728;&#x4E0B;&#x9762;&#x548C;&#x6587;&#x6863;&#x7684;&#x540E;&#x7EED;&#x90E8;&#x5206;&#x4E2D;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x3002;&#x6B63;&#x5982;&#x4F60;&#x5C06;&#x5728;&#x540E;&#x9762;&#x90E8;&#x5206;&#x770B;&#x5230;&#x7684;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x81EA;&#x5DF1;&#x4F7F;&#x7528;&#x5206;&#x5C42;&#x7D22;&#x5F15;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;MultiIndex&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4ECE;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x60A8;&#x53EF;&#x80FD;&#x5E0C;&#x671B;&#x5728;&#x51C6;&#x5907;&#x6570;&#x636E;&#x96C6;&#x65F6;&#x751F;&#x6210;&#x81EA;&#x5DF1;&#x7684;MultiIndex&#x3002;&#x8BF7;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x4F7F;&#x7528;pandas.set_printoptions&#x4E2D;&#x7684;multi_sparse&#x9009;&#x9879;&#x8FDB;&#x884C;&#x63A7;&#x5236;&#x6765;&#x663E;&#x793A;&#x7D22;&#x5F15;&#xFF1A;</p>
+<pre><code class="lang-python">pd.set_option(<span class="hljs-string">&apos;display.multi_sparse&apos;</span>, <span class="hljs-keyword">False</span>)
+</code></pre>
+<pre><code class="lang-python">df
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>first</th>
+      <th>bar</th>
+      <th>bar</th>
+      <th>baz</th>
+      <th>baz</th>
+      <th>foo</th>
+      <th>foo</th>
+      <th>qux</th>
+      <th>qux</th>
+    </tr>
+    <tr>
+      <th>second</th>
+      <th>one</th>
+      <th>two</th>
+      <th>one</th>
+      <th>two</th>
+      <th>one</th>
+      <th>two</th>
+      <th>one</th>
+      <th>two</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>-0.623886</td>
+      <td>-1.210745</td>
+      <td>-1.247687</td>
+      <td>-1.775733</td>
+      <td>0.071501</td>
+      <td>-0.559662</td>
+      <td>-1.227424</td>
+      <td>0.048207</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.539847</td>
+      <td>1.144010</td>
+      <td>-0.602236</td>
+      <td>0.712611</td>
+      <td>1.933703</td>
+      <td>0.761082</td>
+      <td>0.873890</td>
+      <td>-0.211337</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-0.360050</td>
+      <td>0.518990</td>
+      <td>-0.336434</td>
+      <td>-1.005913</td>
+      <td>1.455619</td>
+      <td>-0.156915</td>
+      <td>-0.131643</td>
+      <td>-1.106066</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">pd.set_option(<span class="hljs-string">&apos;display.multi_sparse&apos;</span>, <span class="hljs-keyword">True</span>)
+</code></pre>
+<h2 id="&#x91CD;&#x5EFA;&#x7EA7;&#x522B;&#x6807;&#x7B7E;"><a name="&#x91CD;&#x5EFA;&#x7EA7;&#x522B;&#x6807;&#x7B7E;" class="anchor-navigation-ex-anchor" href="#&#x91CD;&#x5EFA;&#x7EA7;&#x522B;&#x6807;&#x7B7E;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x91CD;&#x5EFA;&#x7EA7;&#x522B;&#x6807;&#x7B7E;</h2>
+<p>&#x65B9;&#x6CD5;<code>get_level_values</code>&#x5C06;&#x8FD4;&#x56DE;&#x7279;&#x5B9A;&#x7EA7;&#x522B;&#x4E0A;&#x6BCF;&#x4E2A;&#x4F4D;&#x7F6E;&#x7684;&#x6807;&#x7B7E;&#x7684;&#x5411;&#x91CF;</p>
+<pre><code class="lang-python">index.get_level_values(<span class="hljs-number">0</span>)
+</code></pre>
+<pre><code>Index([&apos;bar&apos;, &apos;bar&apos;, &apos;baz&apos;, &apos;baz&apos;, &apos;foo&apos;, &apos;foo&apos;, &apos;qux&apos;, &apos;qux&apos;], dtype=&apos;object&apos;, name=&apos;first&apos;)
+</code></pre><pre><code class="lang-python">index.get_level_values(<span class="hljs-string">&apos;second&apos;</span>)
+</code></pre>
+<pre><code>Index([&apos;one&apos;, &apos;two&apos;, &apos;one&apos;, &apos;two&apos;, &apos;one&apos;, &apos;two&apos;, &apos;one&apos;, &apos;two&apos;], dtype=&apos;object&apos;, name=&apos;second&apos;)
+</code></pre><h2 id="&#x4F7F;&#x7528;multiindex&#x5728;&#x8F74;&#x4E0A;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x7D22;&#x5F15;"><a name="&#x4F7F;&#x7528;multiindex&#x5728;&#x8F74;&#x4E0A;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;multiindex&#x5728;&#x8F74;&#x4E0A;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x4F7F;&#x7528;MultiIndex&#x5728;&#x8F74;&#x4E0A;&#x8FDB;&#x884C;&#x57FA;&#x672C;&#x7D22;&#x5F15;</h2>
+<p>&#x5206;&#x5C42;&#x7D22;&#x5F15;&#x7684;&#x4E00;&#x4E2A;&#x91CD;&#x8981;&#x7279;&#x5F81;&#x662F;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6807;&#x8BC6;&#x6570;&#x636E;&#x4E2D;&#x5B50;&#x7EC4;&#x7684;&#x201C;&#x90E8;&#x5206;&#x201D;&#x6807;&#x7B7E;&#x6765;&#x9009;&#x62E9;&#x6570;&#x636E;&#x3002;&#x90E8;&#x5206;&#x9009;&#x62E9;&#x201C;&#x4E22;&#x5F03;&#x201D;&#x5C42;&#x6B21;&#x7D22;&#x5F15;&#x7684;&#x6C34;&#x5E73;&#x5728;&#x7ED3;&#x679C;&#x4E2D;&#x4EE5;&#x4E00;&#x79CD;&#x5B8C;&#x5168;&#x7C7B;&#x4F3C;&#x7684;&#x65B9;&#x5F0F;&#x9009;&#x62E9;&#x5E38;&#x89C4;DataFrame&#x4E2D;&#x7684;&#x5217;&#xFF1A;</p>
+<pre><code class="lang-python">df[<span class="hljs-string">&apos;bar&apos;</span>]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>second</th>
+      <th>one</th>
+      <th>two</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>A</th>
+      <td>-0.623886</td>
+      <td>-1.210745</td>
+    </tr>
+    <tr>
+      <th>B</th>
+      <td>0.539847</td>
+      <td>1.144010</td>
+    </tr>
+    <tr>
+      <th>C</th>
+      <td>-0.360050</td>
+      <td>0.518990</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df[<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>]
+</code></pre>
+<pre><code>A   -0.623886
+B    0.539847
+C   -0.360050
+Name: (bar, one), dtype: float64
+</code></pre><pre><code class="lang-python">df[<span class="hljs-string">&apos;bar&apos;</span>][<span class="hljs-string">&apos;one&apos;</span>]
+</code></pre>
+<pre><code>A   -0.623886
+B    0.539847
+C   -0.360050
+Name: one, dtype: float64
+</code></pre><pre><code class="lang-python">s[<span class="hljs-string">&apos;qux&apos;</span>]
+</code></pre>
+<pre><code>one    1.150871
+two    0.546428
+dtype: float64
+</code></pre><pre><code class="lang-python">df.columns
+</code></pre>
+<pre><code>MultiIndex(levels=[[&apos;bar&apos;, &apos;baz&apos;, &apos;foo&apos;, &apos;qux&apos;], [&apos;one&apos;, &apos;two&apos;]],
+           labels=[[0, 0, 1, 1, 2, 2, 3, 3], [0, 1, 0, 1, 0, 1, 0, 1]],
+           names=[&apos;first&apos;, &apos;second&apos;])
+</code></pre><pre><code class="lang-python">df[[<span class="hljs-string">&apos;foo&apos;</span>,<span class="hljs-string">&apos;qux&apos;</span>]].columns
+</code></pre>
+<pre><code>MultiIndex(levels=[[&apos;bar&apos;, &apos;baz&apos;, &apos;foo&apos;, &apos;qux&apos;], [&apos;one&apos;, &apos;two&apos;]],
+           labels=[[2, 2, 3, 3], [0, 1, 0, 1]],
+           names=[&apos;first&apos;, &apos;second&apos;])
+</code></pre><p>&#x8FD9;&#x6837;&#x505A;&#x662F;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x6C34;&#x5E73;&#x4EE5;&#x4FBF;&#x4F7F;&#x5207;&#x7247;&#x5177;&#x6709;&#x9AD8;&#x6027;&#x80FD;&#x3002;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x770B;&#x5230;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x7684;&#x6C34;&#x5E73;&#x3002;</p>
+<pre><code class="lang-python">df[[<span class="hljs-string">&apos;foo&apos;</span>,<span class="hljs-string">&apos;qux&apos;</span>]].columns.values
+</code></pre>
+<pre><code>array([(&apos;foo&apos;, &apos;one&apos;), (&apos;foo&apos;, &apos;two&apos;), (&apos;qux&apos;, &apos;one&apos;), (&apos;qux&apos;, &apos;two&apos;)], dtype=object)
+</code></pre><pre><code class="lang-python">df[[<span class="hljs-string">&apos;foo&apos;</span>,<span class="hljs-string">&apos;qux&apos;</span>]].columns.get_level_values(<span class="hljs-number">0</span>)
+</code></pre>
+<pre><code>Index([&apos;foo&apos;, &apos;foo&apos;, &apos;qux&apos;, &apos;qux&apos;], dtype=&apos;object&apos;, name=&apos;first&apos;)
+</code></pre><pre><code class="lang-python">pd.MultiIndex.from_tuples(df[[<span class="hljs-string">&apos;foo&apos;</span>,<span class="hljs-string">&apos;qux&apos;</span>]].columns.values)
+</code></pre>
+<pre><code>MultiIndex(levels=[[&apos;foo&apos;, &apos;qux&apos;], [&apos;one&apos;, &apos;two&apos;]],
+           labels=[[0, 0, 1, 1], [0, 1, 0, 1]])
+</code></pre><h2 id="&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x548C;&#x4F7F;&#x7528;reindex"><a name="&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x548C;&#x4F7F;&#x7528;reindex" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x548C;&#x4F7F;&#x7528;reindex"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x6570;&#x636E;&#x5BF9;&#x9F50;&#x548C;&#x4F7F;&#x7528;reindex</h2>
+<p>&#x5728;&#x8F74;&#x4E0A;&#x5177;&#x6709;&#x591A;&#x7D22;&#x5F15;&#x7684;&#x4E0D;&#x540C;&#x7D22;&#x5F15;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x5982;&#x671F;&#x671B;&#x5730;&#x5DE5;&#x4F5C;;&#x6570;&#x636E;&#x5BF9;&#x9F50;&#x5C06;&#x50CF;&#x5143;&#x7EC4;&#x7D22;&#x5F15;&#x4E00;&#x6837;&#x5DE5;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-python">s + s[:<span class="hljs-number">-2</span>]
+</code></pre>
+<pre><code>bar  one   -2.443668
+     two   -1.632123
+baz  one    0.269374
+     two    0.286373
+foo  one    1.980220
+     two    0.417029
+qux  one         NaN
+     two         NaN
+dtype: float64
+</code></pre><pre><code class="lang-python"> s + s[::<span class="hljs-number">2</span>]
+</code></pre>
+<pre><code>bar  one   -2.443668
+     two         NaN
+baz  one    0.269374
+     two         NaN
+foo  one    1.980220
+     two         NaN
+qux  one    2.301741
+     two         NaN
+dtype: float64
+</code></pre><p>reindex&#x53EF;&#x4EE5;&#x7528;&#x53E6;&#x4E00;&#x4E2A;MultiIndex&#x6216;&#x751A;&#x81F3;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#x7684;&#x5217;&#x8868;&#x6216;&#x6570;&#x7EC4;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-python">s.reindex(index[:<span class="hljs-number">3</span>])
+</code></pre>
+<pre><code>first  second
+bar    one      -1.221834
+       two      -0.816061
+baz    one       0.134687
+dtype: float64
+</code></pre><pre><code class="lang-python">s.reindex([(<span class="hljs-string">&apos;foo&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>), (<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>), (<span class="hljs-string">&apos;qux&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>), (<span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>)])
+</code></pre>
+<pre><code>foo  two    0.208515
+bar  one   -1.221834
+qux  one    1.150871
+baz  one    0.134687
+dtype: float64
+</code></pre><h2 id="&#x9AD8;&#x7EA7;&#x7D22;&#x5F15;&#x4E0E;&#x5C42;&#x6B21;&#x7D22;&#x5F15;"><a name="&#x9AD8;&#x7EA7;&#x7D22;&#x5F15;&#x4E0E;&#x5C42;&#x6B21;&#x7D22;&#x5F15;" class="anchor-navigation-ex-anchor" href="#&#x9AD8;&#x7EA7;&#x7D22;&#x5F15;&#x4E0E;&#x5C42;&#x6B21;&#x7D22;&#x5F15;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x9AD8;&#x7EA7;&#x7D22;&#x5F15;&#x4E0E;&#x5C42;&#x6B21;&#x7D22;&#x5F15;</h2>
+<p>&#x4F7F;&#x7528;.loc / .ix&#x5728;&#x9AD8;&#x7EA7;&#x7D22;&#x5F15;&#x4E2D;&#x8BED;&#x6CD5;&#x96C6;&#x6210;MultiIndex&#x6709;&#x70B9;&#x5177;&#x6709;&#x6311;&#x6218;&#x6027;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x5DF2;&#x5C3D;&#x4E00;&#x5207;&#x52AA;&#x529B;&#x8FD9;&#x6837;&#x505A;&#x3002;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F60;&#x4F1A;&#x671F;&#x671B;&#xFF1A;</p>
+<pre><code class="lang-python">df = df.T
+</code></pre>
+<pre><code class="lang-python">df
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>one</th>
+      <td>-0.623886</td>
+      <td>0.539847</td>
+      <td>-0.360050</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-1.210745</td>
+      <td>1.144010</td>
+      <td>0.518990</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>one</th>
+      <td>-1.247687</td>
+      <td>-0.602236</td>
+      <td>-0.336434</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-1.775733</td>
+      <td>0.712611</td>
+      <td>-1.005913</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">foo</th>
+      <th>one</th>
+      <td>0.071501</td>
+      <td>1.933703</td>
+      <td>1.455619</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.559662</td>
+      <td>0.761082</td>
+      <td>-0.156915</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">qux</th>
+      <th>one</th>
+      <td>-1.227424</td>
+      <td>0.873890</td>
+      <td>-0.131643</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>0.048207</td>
+      <td>-0.211337</td>
+      <td>-1.106066</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df.loc[<span class="hljs-string">&apos;bar&apos;</span>]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>one</th>
+      <td>-0.623886</td>
+      <td>0.539847</td>
+      <td>-0.36005</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-1.210745</td>
+      <td>1.144010</td>
+      <td>0.51899</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df.loc[<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>]
+</code></pre>
+<pre><code>A   -1.210745
+B    1.144010
+C    0.518990
+Name: (bar, two), dtype: float64
+</code></pre><pre><code class="lang-python">df.loc[<span class="hljs-string">&apos;baz&apos;</span>:<span class="hljs-string">&apos;foo&apos;</span>]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>one</th>
+      <td>-1.247687</td>
+      <td>-0.602236</td>
+      <td>-0.336434</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-1.775733</td>
+      <td>0.712611</td>
+      <td>-1.005913</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">foo</th>
+      <th>one</th>
+      <td>0.071501</td>
+      <td>1.933703</td>
+      <td>1.455619</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.559662</td>
+      <td>0.761082</td>
+      <td>-0.156915</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x5143;&#x7EC4;&#x7684;&#x5207;&#x7247;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x201C;&#x8303;&#x56F4;&#x201D;&#x7684;&#x503C;&#x3002;</p>
+<pre><code class="lang-python">df.loc[(<span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>):(<span class="hljs-string">&apos;qux&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>)]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>baz</th>
+      <th>two</th>
+      <td>-1.775733</td>
+      <td>0.712611</td>
+      <td>-1.005913</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">foo</th>
+      <th>one</th>
+      <td>0.071501</td>
+      <td>1.933703</td>
+      <td>1.455619</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.559662</td>
+      <td>0.761082</td>
+      <td>-0.156915</td>
+    </tr>
+    <tr>
+      <th>qux</th>
+      <th>one</th>
+      <td>-1.227424</td>
+      <td>0.873890</td>
+      <td>-0.131643</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df.loc[(<span class="hljs-string">&apos;baz&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>):<span class="hljs-string">&apos;foo&apos;</span>]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>baz</th>
+      <th>two</th>
+      <td>-1.775733</td>
+      <td>0.712611</td>
+      <td>-1.005913</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">foo</th>
+      <th>one</th>
+      <td>0.071501</td>
+      <td>1.933703</td>
+      <td>1.455619</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-0.559662</td>
+      <td>0.761082</td>
+      <td>-0.156915</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x4F20;&#x9012;&#x6807;&#x7B7E;&#x6216;&#x5143;&#x7EC4;&#x7684;&#x5217;&#x8868;&#x4E0E;&#x91CD;&#x5EFA;&#x7D22;&#x5F15;&#x7C7B;&#x4F3C;&#xFF1A;</p>
+<pre><code class="lang-python">df.ix[[(<span class="hljs-string">&apos;bar&apos;</span>, <span class="hljs-string">&apos;two&apos;</span>), (<span class="hljs-string">&apos;qux&apos;</span>, <span class="hljs-string">&apos;one&apos;</span>)]]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>bar</th>
+      <th>two</th>
+      <td>-1.210745</td>
+      <td>1.14401</td>
+      <td>0.518990</td>
+    </tr>
+    <tr>
+      <th>qux</th>
+      <th>one</th>
+      <td>-1.227424</td>
+      <td>0.87389</td>
+      <td>-0.131643</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="&#x4F7F;&#x7528;swaplevel&#xFF08;&#xFF09;&#x4EA4;&#x6362;&#x7EA7;&#x522B;"><a name="&#x4F7F;&#x7528;swaplevel&#xFF08;&#xFF09;&#x4EA4;&#x6362;&#x7EA7;&#x522B;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;swaplevel&#xFF08;&#xFF09;&#x4EA4;&#x6362;&#x7EA7;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x4F7F;&#x7528;swaplevel&#xFF08;&#xFF09;&#x4EA4;&#x6362;&#x7EA7;&#x522B;</h2>
+<pre><code class="lang-python">df[:<span class="hljs-number">5</span>]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>first</th>
+      <th>second</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">bar</th>
+      <th>one</th>
+      <td>-0.623886</td>
+      <td>0.539847</td>
+      <td>-0.360050</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-1.210745</td>
+      <td>1.144010</td>
+      <td>0.518990</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">baz</th>
+      <th>one</th>
+      <td>-1.247687</td>
+      <td>-0.602236</td>
+      <td>-0.336434</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <td>-1.775733</td>
+      <td>0.712611</td>
+      <td>-1.005913</td>
+    </tr>
+    <tr>
+      <th>foo</th>
+      <th>one</th>
+      <td>0.071501</td>
+      <td>1.933703</td>
+      <td>1.455619</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df[:<span class="hljs-number">5</span>].swaplevel(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, axis=<span class="hljs-number">0</span>)
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>second</th>
+      <th>first</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>one</th>
+      <th>bar</th>
+      <td>-0.623886</td>
+      <td>0.539847</td>
+      <td>-0.360050</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <th>bar</th>
+      <td>-1.210745</td>
+      <td>1.144010</td>
+      <td>0.518990</td>
+    </tr>
+    <tr>
+      <th>one</th>
+      <th>baz</th>
+      <td>-1.247687</td>
+      <td>-0.602236</td>
+      <td>-0.336434</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <th>baz</th>
+      <td>-1.775733</td>
+      <td>0.712611</td>
+      <td>-1.005913</td>
+    </tr>
+    <tr>
+      <th>one</th>
+      <th>foo</th>
+      <td>0.071501</td>
+      <td>1.933703</td>
+      <td>1.455619</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h2 id="&#x4F7F;&#x7528;reorderlevels&#xFF08;&#xFF09;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x7EA7;&#x522B;"><a name="&#x4F7F;&#x7528;reorderlevels&#xFF08;&#xFF09;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x7EA7;&#x522B;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;reorderlevels&#xFF08;&#xFF09;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x7EA7;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>1.7. &#x4F7F;&#x7528;reorder_levels&#xFF08;&#xFF09;&#x91CD;&#x65B0;&#x6392;&#x5E8F;&#x7EA7;&#x522B;</h2>
+<pre><code class="lang-python">df[:<span class="hljs-number">5</span>].reorder_levels([<span class="hljs-number">1</span>,<span class="hljs-number">0</span>], axis=<span class="hljs-number">0</span>)
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+    <tr>
+      <th>second</th>
+      <th>first</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>one</th>
+      <th>bar</th>
+      <td>-0.623886</td>
+      <td>0.539847</td>
+      <td>-0.360050</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <th>bar</th>
+      <td>-1.210745</td>
+      <td>1.144010</td>
+      <td>0.518990</td>
+    </tr>
+    <tr>
+      <th>one</th>
+      <th>baz</th>
+      <td>-1.247687</td>
+      <td>-0.602236</td>
+      <td>-0.336434</td>
+    </tr>
+    <tr>
+      <th>two</th>
+      <th>baz</th>
+      <td>-1.775733</td>
+      <td>0.712611</td>
+      <td>-1.005913</td>
+    </tr>
+    <tr>
+      <th>one</th>
+      <th>foo</th>
+      <td>0.071501</td>
+      <td>1.933703</td>
+      <td>1.455619</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h1 id="categoricalindex"><a name="categoricalindex" class="anchor-navigation-ex-anchor" href="#categoricalindex"><i class="fa fa-link" aria-hidden="true"></i></a>2. CategoricalIndex</h1>
+<p>&#x6211;&#x4EEC;&#x4ECB;&#x7ECD;&#x4E00;&#x4E2A;CategoricalIndex&#xFF0C;&#x4E00;&#x79CD;&#x65B0;&#x7C7B;&#x578B;&#x7684;&#x7D22;&#x5F15;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x4E8E;&#x652F;&#x6301;&#x7D22;&#x5F15;&#x4E0E;&#x91CD;&#x590D;&#x3002;&#x8FD9;&#x662F;&#x56F4;&#x7ED5;&#x5206;&#x7C7B;&#xFF08;&#x5728;v0.15.0&#x4E2D;&#x5F15;&#x5165;&#xFF09;&#x7684;&#x5BB9;&#x5668;&#xFF0C;&#x5E76;&#x4E14;&#x5141;&#x8BB8;&#x5BF9;&#x5177;&#x6709;&#x5927;&#x91CF;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;&#x8FDB;&#x884C;&#x6709;&#x6548;&#x7684;&#x7D22;&#x5F15;&#x548C;&#x5B58;&#x50A8;&#x3002;&#x5728;0.16.1&#x4E4B;&#x524D;&#xFF0C;&#x4F7F;&#x7528;&#x7C7B;&#x522B;dtype&#x8BBE;&#x7F6E;DataFrame / Series&#x7684;&#x7D22;&#x5F15;&#x4F1A;&#x5C06;&#x5176;&#x8F6C;&#x6362;&#x4E3A;&#x5E38;&#x89C4;&#x7684;&#x57FA;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;Index&#x3002;</p>
+<pre><code class="lang-python">df = pd.DataFrame({<span class="hljs-string">&apos;A&apos;</span>: np.arange(<span class="hljs-number">6</span>),
+                   <span class="hljs-string">&apos;B&apos;</span>: list(<span class="hljs-string">&apos;aabbca&apos;</span>)})
+
+
+df[<span class="hljs-string">&apos;B&apos;</span>] = df[<span class="hljs-string">&apos;B&apos;</span>].astype(<span class="hljs-string">&apos;category&apos;</span>, categories=list(<span class="hljs-string">&apos;cab&apos;</span>))
+</code></pre>
+<pre><code class="lang-python">df
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>a</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>b</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>c</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>a</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df.dtypes
+</code></pre>
+<pre><code>A       int32
+B    category
+dtype: object
+</code></pre><pre><code class="lang-python">df.B.cat.categories
+</code></pre>
+<pre><code>Index([&apos;c&apos;, &apos;a&apos;, &apos;b&apos;], dtype=&apos;object&apos;)
+</code></pre><p>&#x8BBE;&#x7F6E;&#x7D22;&#x5F15;&#xFF0C;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;CategoricalIndex</p>
+<pre><code class="lang-python">df2 = df.set_index(<span class="hljs-string">&apos;B&apos;</span>)
+</code></pre>
+<pre><code class="lang-python">df2.index
+</code></pre>
+<pre><code>CategoricalIndex([&apos;a&apos;, &apos;a&apos;, &apos;b&apos;, &apos;b&apos;, &apos;c&apos;, &apos;a&apos;], categories=[&apos;c&apos;, &apos;a&apos;, &apos;b&apos;], ordered=False, name=&apos;B&apos;, dtype=&apos;category&apos;)
+</code></pre><pre><code class="lang-python">df2.loc[<span class="hljs-string">&apos;a&apos;</span>]
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x8FD9;&#x4E9B;&#x4FDD;&#x7559;&#x4E86;&#x5206;&#x7C7B;&#x7D22;&#x5F15;</p>
+<pre><code class="lang-python">df2.loc[<span class="hljs-string">&apos;a&apos;</span>].index
+</code></pre>
+<pre><code>CategoricalIndex([&apos;a&apos;, &apos;a&apos;, &apos;a&apos;], categories=[&apos;c&apos;, &apos;a&apos;, &apos;b&apos;], ordered=False, name=&apos;B&apos;, dtype=&apos;category&apos;)
+</code></pre><pre><code class="lang-python">df2.sort_index()
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<p>&#x7D22;&#x5F15;&#x4E0A;&#x7684;Groupby&#x64CD;&#x4F5C;&#x4E5F;&#x5C06;&#x4FDD;&#x7559;&#x7D22;&#x5F15;&#x672C;&#x8D28;</p>
+<pre><code class="lang-python">df2.groupby(level=<span class="hljs-number">0</span>).sum()
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>c</th>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>b</th>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df2.groupby(level=<span class="hljs-number">0</span>).sum().index
+</code></pre>
+<pre><code>CategoricalIndex([&apos;c&apos;, &apos;a&apos;, &apos;b&apos;], categories=[&apos;c&apos;, &apos;a&apos;, &apos;b&apos;], ordered=False, name=&apos;B&apos;, dtype=&apos;category&apos;)
+</code></pre><p>&#x91CD;&#x7D22;&#x5F15;&#x64CD;&#x4F5C;&#x5C06;&#x6839;&#x636E;&#x4F20;&#x9012;&#x7684;&#x7D22;&#x5F15;&#x5668;&#x7684;&#x7C7B;&#x578B;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x7D22;&#x5F15;&#xFF0C;&#x8FD9;&#x610F;&#x5473;&#x7740;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x666E;&#x901A;&#x7684;&#x7D22;&#x5F15;;&#x4F7F;&#x7528;&#x5206;&#x7C7B;&#x7D22;&#x5F15;&#x5C06;&#x8FD4;&#x56DE;CategoricalIndex&#xFF0C;&#x6839;&#x636E;PASSED&#x5206;&#x7C7B;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x522B;&#x7D22;&#x5F15;&#x3002;&#x8FD9;&#x5141;&#x8BB8;&#x4EFB;&#x610F;&#x7D22;&#x5F15;&#x8FD9;&#x4E9B;&#x751A;&#x81F3;&#x4E0E;&#x4E0D;&#x5728;&#x7C7B;&#x522B;&#x4E2D;&#x7684;&#x503C;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x60A8;&#x53EF;&#x4EE5;&#x91CD;&#x65B0;&#x7D22;&#x5F15;&#x4EFB;&#x4F55;pandas&#x7D22;&#x5F15;&#x3002;</p>
+<pre><code class="lang-python">df2.reindex([<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>])
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre><code class="lang-python">df2.reindex([<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>]).index
+</code></pre>
+<pre><code>Index([&apos;a&apos;, &apos;a&apos;, &apos;a&apos;, &apos;e&apos;], dtype=&apos;object&apos;, name=&apos;B&apos;)
+</code></pre><pre><code class="lang-python">df2.reindex(pd.Categorical([<span class="hljs-string">&apos;a&apos;</span>,<span class="hljs-string">&apos;e&apos;</span>],categories=list(<span class="hljs-string">&apos;abcde&apos;</span>)))
+</code></pre>
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+    </tr>
+    <tr>
+      <th>B</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>a</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>a</th>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>e</th>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-06-18 22:01:57
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Grouping_and_clustering.html" class="navigation navigation-prev " aria-label="Previous page: 分组与集聚">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="statistical_analysis/statistical_analysis.html" class="navigation navigation-next " aria-label="Next page: 统计分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"复合索引","level":"1.3.4","depth":2,"next":{"title":"统计分析","level":"1.3.5","depth":2,"path":"pandas/statistical_analysis/statistical_analysis.md","ref":"pandas/statistical_analysis/statistical_analysis.md","articles":[]},"previous":{"title":"分组与集聚","level":"1.3.3","depth":2,"path":"pandas/Grouping_and_clustering.md","ref":"pandas/Grouping_and_clustering.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://gitbook.zhangjikai.com"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonMessageQueue","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python攻略--消息队列","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍消息队列的原理和使用方法,介绍python常用的消息队列工具"},"file":{"path":"pandas/MultiIndex.md","mtime":"2017-06-18T14:01:57.856Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-18T14:20:16.453Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
