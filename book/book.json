@@ -51,7 +51,7 @@
             "wechatText": "微信打赏"
         },
         "sitemap-general": {
-            "prefix": "http://blog.hszofficial.site"
+            "prefix": "http://blog.hszofficial.site/TutorialForPythonDataAnalysis/"
         },
         "anchor-navigation-ex": {
             "showLevel": true,
