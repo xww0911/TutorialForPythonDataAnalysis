@@ -1,6 +1,6 @@
 {
-    "title": "python攻略--消息队列",
-    "description": "介绍消息队列的原理和使用方法,介绍python常用的消息队列工具",
+    "title": "python数据分析攻略",
+    "description": "介绍python的基本的数据分析工具",
     "gitbook": ">=2.0.0",
     "author" : "hsz",
     "language": "zh-hans",
@@ -29,7 +29,7 @@
             "url": "https://github.com/hsz1273327"
         },
         "github-buttons": {
-            "repo": "hsz1273327/TutorialForPythonMessageQueue",
+            "repo": "hsz1273327/TutorialForPythonDataAnalysis",
             "types": ["star","watch","fork"],
             "size": "small"
         },
@@ -51,7 +51,7 @@
             "wechatText": "微信打赏"
         },
         "sitemap-general": {
-            "prefix": "http://gitbook.zhangjikai.com"
+            "prefix": "http://blog.hszofficial.site"
         },
         "anchor-navigation-ex": {
             "showLevel": true,
