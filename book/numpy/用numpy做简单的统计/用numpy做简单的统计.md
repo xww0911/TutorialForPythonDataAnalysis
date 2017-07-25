@@ -186,7 +186,7 @@ np.corrcoef([[1,1,0,1,1],[0,1,0,1,1]],rowvar=0)
       c /= stddev[:, None]
     C:\Users\Administrator\Anaconda3\lib\site-packages\numpy\lib\function_base.py:2570: RuntimeWarning: invalid value encountered in true_divide
       c /= stddev[None, :]
-    
+
 
 
 
@@ -435,7 +435,7 @@ print(H[::-1])
      [  9.  10.  11.  12.]
      [  5.   6.   7.   8.]
      [  1.   2.   3.   4.]]
-    
+
 
 
 ```python
@@ -493,7 +493,7 @@ for n in range(x.size):
     4.0 <= 6.4 < 10.0
     2.5 <= 3.0 < 4.0
     1.0 <= 1.6 < 2.5
-    
+
 
 
 ```python

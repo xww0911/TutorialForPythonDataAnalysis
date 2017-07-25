@@ -121,7 +121,7 @@ print(round(np.irr([-5, 10.5, 1, -8, 1]), 5))
     -0.0833
     0.06206
     0.0886
-    
+
 
 + ### mirr(values, finance_rate, reinvest_rate)修改后的内部收益率。
 
@@ -142,7 +142,7 @@ print(round(np.nper(0.07/12, -150, 8000), 5))
 ```
 
     64.07335
-    
+
 
 + ### rate(nper, pmt, pv, fv, when='end', guess=0.1, tol=1e-06, maxiter=100)计算每个周期的利率。
 

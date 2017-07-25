@@ -555,6 +555,106 @@ A
 
 
 
+### 数组拼接
+
+
+```python
+A=np.arange(1,13).reshape(3,4)
+A
+```
+
+
+
+
+    array([[ 1,  2,  3,  4],
+           [ 5,  6,  7,  8],
+           [ 9, 10, 11, 12]])
+
+
+
+
+```python
+B=np.arange(2,14).reshape(3,4)
+B
+```
+
+
+
+
+    array([[ 2,  3,  4,  5],
+           [ 6,  7,  8,  9],
+           [10, 11, 12, 13]])
+
+
+
+#### 横向拼接
+
+
+```python
+np.hstack((A,B))
+```
+
+
+
+
+    array([[ 1,  2,  3,  4,  2,  3,  4,  5],
+           [ 5,  6,  7,  8,  6,  7,  8,  9],
+           [ 9, 10, 11, 12, 10, 11, 12, 13]])
+
+
+
+#### 纵向拼接
+
+
+```python
+np.vstack((A,B))
+```
+
+
+
+
+    array([[ 1,  2,  3,  4],
+           [ 5,  6,  7,  8],
+           [ 9, 10, 11, 12],
+           [ 2,  3,  4,  5],
+           [ 6,  7,  8,  9],
+           [10, 11, 12, 13]])
+
+
+
+#### 通用操作
+
+
+```python
+np.concatenate((A,B),axis=0)
+```
+
+
+
+
+    array([[ 1,  2,  3,  4],
+           [ 5,  6,  7,  8],
+           [ 9, 10, 11, 12],
+           [ 2,  3,  4,  5],
+           [ 6,  7,  8,  9],
+           [10, 11, 12, 13]])
+
+
+
+
+```python
+np.concatenate((A,B),axis=1)
+```
+
+
+
+
+    array([[ 1,  2,  3,  4,  2,  3,  4,  5],
+           [ 5,  6,  7,  8,  6,  7,  8,  9],
+           [ 9, 10, 11, 12, 10, 11, 12, 13]])
+
+
+
 ### 结构数组
 
 在numpy中可以定义结构数组来表现结构化数据,虽然这个功能现在有pandas这个更好的实现,但如果只是轻量级的使用,numpy的结构数组或许更有效率
@@ -631,7 +731,7 @@ test = np.arange(int(1e5))
 ```
 
     3 loops, best of 3: 170 ns per loop
-    
+
 
 
 ```python
@@ -639,7 +739,7 @@ test = np.arange(int(1e5))
 ```
 
     3 loops, best of 3: 85.6 µs per loop
-    
+
 
 numpy内置了许多ufunc.
 
@@ -670,7 +770,7 @@ np.arange(1,10).reshape(3,3)*4+2
 
     The slowest run took 13.74 times longer than the fastest. This could mean that an intermediate result is being cached.
     1000000 loops, best of 3: 1.97 µs per loop
-    
+
 
 
 ```python
@@ -686,7 +786,7 @@ def a():
 
     The slowest run took 32.74 times longer than the fastest. This could mean that an intermediate result is being cached.
     100000 loops, best of 3: 2.02 µs per loop
-    
+
 
 
 ```python
@@ -777,7 +877,7 @@ plt.show()
 ```
 
 
-![png](output_88_0.png)
+![png](output_98_0.png)
 
 
 ## 广播
@@ -1009,7 +1109,7 @@ plt.show()
 ```
 
 
-![png](output_109_0.png)
+![png](output_119_0.png)
 
 
 ## 针对ufunc的函数
