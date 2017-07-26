@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>多项式与线性代数计算 · python数据分析攻略</title>
+        <title>多项式和线性代数 · python数据分析攻略</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -86,10 +86,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../statistics/statistics.html" />
+    <link rel="next" href="../用numpy做简单的统计/用numpy做简单的统计.html" />
     
     
-    <link rel="prev" href="../element_type_op_and_random/element_type_op_and_random.html" />
+    <link rel="prev" href="../元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html" />
     
 
     <style>
@@ -165,12 +165,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../narray_and_universal_function/narray_and_universal_function.html">
+        <li class="chapter " data-level="1.2.1" data-path="../高性能数组narray及其universaal_function/高性能数组narray及其universaal_function.html">
             
-                <a href="../narray_and_universal_function/narray_and_universal_function.html">
+                <a href="../高性能数组narray及其universaal_function/高性能数组narray及其universaal_function.html">
             
                     
-                    numpy数组与universal-function
+                    高性能数组narray及其universaal_function
             
                 </a>
             
@@ -178,12 +178,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../element_type_op_and_random/element_type_op_and_random.html">
+        <li class="chapter " data-level="1.2.2" data-path="../元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html">
             
-                <a href="../element_type_op_and_random/element_type_op_and_random.html">
+                <a href="../元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html">
             
                     
-                    numpy数组的元素类型和随机操作
+                    元素数据类型和内置数学运算和随机数
             
                 </a>
             
@@ -191,12 +191,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.3" data-path="Polynomials_and_Linear_algebra.html">
+        <li class="chapter active" data-level="1.2.3" data-path="多项式和线性代数.html">
             
-                <a href="Polynomials_and_Linear_algebra.html">
+                <a href="多项式和线性代数.html">
             
                     
-                    多项式与线性代数计算
+                    多项式和线性代数
             
                 </a>
             
@@ -204,12 +204,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../statistics/statistics.html">
+        <li class="chapter " data-level="1.2.4" data-path="../用numpy做简单的统计/用numpy做简单的统计.html">
             
-                <a href="../statistics/statistics.html">
+                <a href="../用numpy做简单的统计/用numpy做简单的统计.html">
             
                     
-                    numpy的统计学工具
+                    用numpy做简单的统计
             
                 </a>
             
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../Financial_functions.html">
+        <li class="chapter " data-level="1.2.5" data-path="../numpy的财务分析函数.html">
             
-                <a href="../Financial_functions.html">
+                <a href="../numpy的财务分析函数.html">
             
                     
                     numpy的财务分析工具
@@ -230,12 +230,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="../frequency_analysis/frequency_analysis.html">
+        <li class="chapter " data-level="1.2.6" data-path="../频谱分析/频谱分析.html">
             
-                <a href="../frequency_analysis/frequency_analysis.html">
+                <a href="../频谱分析/频谱分析.html">
             
                     
                     频谱分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../使用Cython扩展numpy.html">
+            
+                <a href="../使用Cython扩展numpy.html">
+            
+                    
+                    使用Cython扩展numpy
             
                 </a>
             
@@ -550,7 +563,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >多项式与线性代数计算</a>
+        <a href="../.." >多项式和线性代数</a>
     </h1>
 </div>
 
@@ -620,7 +633,7 @@
 </code></pre><pre><code class="lang-python">p**<span class="hljs-number">2</span> <span class="hljs-comment"># &#x5E42;,&#x4E0E;&#x4E58;&#x6CD5;&#x89C4;&#x5219;&#x76F8;&#x540C;</span>
 </code></pre>
 <pre><code>Polynomial([ 1.,  4.,  4.], [-1.,  1.], [-1.,  1.])
-</code></pre><p>&#x9664;&#x6CD5;:
+</code></pre><p>&#x9664;&#x6CD5;: 
 <code>//</code>&#x662F;&#x591A;&#x9879;&#x5F0F;&#x7C7B;&#x7684;&#x9664;&#x6CD5;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x5728;&#x8FD9;&#x65B9;&#x9762;&#xFF0C;&#x591A;&#x9879;&#x5F0F;&#x88AB;&#x89C6;&#x4E3A;&#x6574;&#x6570;.&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#x7684;&#x662F;&#x6C42;&#x4F59;%,&#x8868;&#x793A;&#x9664;&#x540E;&#x4F59;&#x4E0B;&#x7684;&#x9879;</p>
 <pre><code class="lang-python">p//P([<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>]) <span class="hljs-comment">#&#x76F8;&#x5F53;&#x4E8E;&#x591A;&#x9879;&#x5F0F;&#x5206;&#x89E3;</span>
 </code></pre>
@@ -1099,7 +1112,7 @@ M_2
 <pre><code>matrix([[-2. ,  1. ],
         [ 1.5, -0.5]])
 </code></pre><ul>
-<li>&#x4F34;&#x968F;&#x77E9;&#x9635;(adjoint)</li>
+<li>&#x4F34;&#x968F;&#x77E9;&#x9635;(adjoint) </li>
 </ul>
 <pre><code class="lang-python">np.dot(np.linalg.det(M_1),M_1.I)
 </code></pre>
@@ -1218,14 +1231,14 @@ C:\Users\Administrator\Anaconda3\lib\site-packages\numpy\linalg\linalg.py in cho
     611     signature = &apos;D-&gt;D&apos; if isComplexType(t) else &apos;d-&gt;d&apos;
 --&gt; 612     r = gufunc(a, signature=signature, extobj=extobj)
     613     return wrap(r.astype(result_t, copy=False))
-    614
+    614 
 
 
 C:\Users\Administrator\Anaconda3\lib\site-packages\numpy\linalg\linalg.py in _raise_linalgerror_nonposdef(err, flag)
-     91
+     91 
      92 def _raise_linalgerror_nonposdef(err, flag):
 ---&gt; 93     raise LinAlgError(&quot;Matrix is not positive definite&quot;)
-     94
+     94 
      95 def _raise_linalgerror_eigenvalues_nonconvergence(err, flag):
 
 
@@ -1245,14 +1258,14 @@ C:\Users\Administrator\Anaconda3\lib\site-packages\numpy\linalg\linalg.py in cho
     611     signature = &apos;D-&gt;D&apos; if isComplexType(t) else &apos;d-&gt;d&apos;
 --&gt; 612     r = gufunc(a, signature=signature, extobj=extobj)
     613     return wrap(r.astype(result_t, copy=False))
-    614
+    614 
 
 
 C:\Users\Administrator\Anaconda3\lib\site-packages\numpy\linalg\linalg.py in _raise_linalgerror_nonposdef(err, flag)
-     91
+     91 
      92 def _raise_linalgerror_nonposdef(err, flag):
 ---&gt; 93     raise LinAlgError(&quot;Matrix is not positive definite&quot;)
-     94
+     94 
      95 def _raise_linalgerror_eigenvalues_nonconvergence(err, flag):
 
 
@@ -1357,7 +1370,7 @@ B_2 = np.matrix([[<span class="hljs-number">1</span>,<span class="hljs-number">2
 <pre><code>matrix([[ 2.5,  2.5],
         [-0.5,  1.5]])
 </code></pre><footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2017-06-18 23:25:50
+2017-07-25 23:16:48
 </span></footer>
                                 
                                 </section>
@@ -1385,12 +1398,12 @@ B_2 = np.matrix([[<span class="hljs-number">1</span>,<span class="hljs-number">2
 
             
                 
-                <a href="../element_type_op_and_random/element_type_op_and_random.html" class="navigation navigation-prev " aria-label="Previous page: numpy数组的元素类型和随机操作">
+                <a href="../元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html" class="navigation navigation-prev " aria-label="Previous page: 元素数据类型和内置数学运算和随机数">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../statistics/statistics.html" class="navigation navigation-next " aria-label="Next page: numpy的统计学工具">
+                <a href="../用numpy做简单的统计/用numpy做简单的统计.html" class="navigation navigation-next " aria-label="Next page: 用numpy做简单的统计">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1401,7 +1414,7 @@ B_2 = np.matrix([[<span class="hljs-number">1</span>,<span class="hljs-number">2
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"多项式与线性代数计算","level":"1.2.3","depth":2,"next":{"title":"numpy的统计学工具","level":"1.2.4","depth":2,"path":"numpy/statistics/statistics.md","ref":"numpy/statistics/statistics.md","articles":[]},"previous":{"title":"numpy数组的元素类型和随机操作","level":"1.2.2","depth":2,"path":"numpy/element_type_op_and_random/element_type_op_and_random.md","ref":"numpy/element_type_op_and_random/element_type_op_and_random.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://blog.hszofficial.site/TutorialForPythonDataAnalysis/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonDataAnalysis","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python数据分析攻略","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍python的基本的数据分析工具"},"file":{"path":"numpy/Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.md","mtime":"2017-06-18T15:25:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-01T14:14:13.803Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多项式和线性代数","level":"1.2.3","depth":2,"next":{"title":"用numpy做简单的统计","level":"1.2.4","depth":2,"path":"numpy/用numpy做简单的统计/用numpy做简单的统计.md","ref":"numpy/用numpy做简单的统计/用numpy做简单的统计.md","articles":[]},"previous":{"title":"元素数据类型和内置数学运算和随机数","level":"1.2.2","depth":2,"path":"numpy/元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.md","ref":"numpy/元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://blog.hszofficial.site/TutorialForPythonDataAnalysis/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonDataAnalysis","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python数据分析攻略","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍python的基本的数据分析工具"},"file":{"path":"numpy/多项式和线性代数/多项式和线性代数.md","mtime":"2017-07-25T15:16:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T13:03:20.914Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

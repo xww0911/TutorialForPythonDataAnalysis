@@ -1,0 +1,1165 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>使用Cython扩展numpy · python数据分析攻略</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="author" content="hsz">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../pandas/" />
+    
+    
+    <link rel="prev" href="频谱分析/频谱分析.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"repo":"hsz1273327/TutorialForPythonDataAnalysis","types":["star","watch","fork"],"size":"small"};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="http://blog.hszofficial.site/" target="_blank" class="custom-link">Home</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    科学计算通用数组工具numpy
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="高性能数组narray及其universaal_function/高性能数组narray及其universaal_function.html">
+            
+                <a href="高性能数组narray及其universaal_function/高性能数组narray及其universaal_function.html">
+            
+                    
+                    高性能数组narray及其universaal_function
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html">
+            
+                <a href="元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html">
+            
+                    
+                    元素数据类型和内置数学运算和随机数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="多项式和线性代数/多项式和线性代数.html">
+            
+                <a href="多项式和线性代数/多项式和线性代数.html">
+            
+                    
+                    多项式和线性代数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="用numpy做简单的统计/用numpy做简单的统计.html">
+            
+                <a href="用numpy做简单的统计/用numpy做简单的统计.html">
+            
+                    
+                    用numpy做简单的统计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="numpy的财务分析函数.html">
+            
+                <a href="numpy的财务分析函数.html">
+            
+                    
+                    numpy的财务分析工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="频谱分析/频谱分析.html">
+            
+                <a href="频谱分析/频谱分析.html">
+            
+                    
+                    频谱分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="使用Cython扩展numpy.html">
+            
+                <a href="使用Cython扩展numpy.html">
+            
+                    
+                    使用Cython扩展numpy
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../pandas/">
+            
+                <a href="../pandas/">
+            
+                    
+                    结构化数据处理工具pandas
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../pandas/basic_operation.html">
+            
+                <a href="../pandas/basic_operation.html">
+            
+                    
+                    表格基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../pandas/Munging_Data.html">
+            
+                <a href="../pandas/Munging_Data.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../pandas/Grouping_and_clustering.html">
+            
+                <a href="../pandas/Grouping_and_clustering.html">
+            
+                    
+                    分组与集聚
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../pandas/MultiIndex.html">
+            
+                <a href="../pandas/MultiIndex.html">
+            
+                    
+                    复合索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../pandas/statistical_analysis/statistical_analysis.html">
+            
+                <a href="../pandas/statistical_analysis/statistical_analysis.html">
+            
+                    
+                    统计分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../pandas/Visualization/Visualization.html">
+            
+                <a href="../pandas/Visualization/Visualization.html">
+            
+                    
+                    数据可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../pandas/data_procurement.html">
+            
+                <a href="../pandas/data_procurement.html">
+            
+                    
+                    数据获取与保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../matplotlib/">
+            
+                <a href="../matplotlib/">
+            
+                    
+                    可视化工具matplotlib
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                <a href="../matplotlib/matplotlib_config/matplotlib_config.html">
+            
+                    
+                    matplotlib设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../matplotlib/pyplot/pyplot.html">
+            
+                <a href="../matplotlib/pyplot/pyplot.html">
+            
+                    
+                    pyplot
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                <a href="../matplotlib/Sankey_diagram/Sankey_diagram.html">
+            
+                    
+                    桑基图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../matplotlib/triangular_grids/triangular_grids.html">
+            
+                <a href="../matplotlib/triangular_grids/triangular_grids.html">
+            
+                    
+                    非结构图形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../matplotlib/load_image/load_image.html">
+            
+                <a href="../matplotlib/load_image/load_image.html">
+            
+                    
+                    图片加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../matplotlib/save_img/save_img.html">
+            
+                <a href="../matplotlib/save_img/save_img.html">
+            
+                    
+                    图片保存
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../matplotlib/animation/animation.html">
+            
+                <a href="../matplotlib/animation/animation.html">
+            
+                    
+                    动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../matplotlib/widgets.html">
+            
+                <a href="../matplotlib/widgets.html">
+            
+                    
+                    matplotlib控件与交互
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../matplotlib/with_webtech">
+            
+                <span>
+            
+                    
+                    与web技术结合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../matplotlib/finance/finance.html">
+            
+                <a href="../matplotlib/finance/finance.html">
+            
+                    
+                    金融信息爬取
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../matplotlib/结语.html">
+            
+                <a href="../matplotlib/结语.html">
+            
+                    
+                    结语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >使用Cython扩展numpy</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x4E0E;numpy&#x7ED3;&#x5408;&#x5B9E;&#x73B0;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;"><b>1. </b>&#x4E0E;numpy&#x7ED3;&#x5408;&#x5B9E;&#x73B0;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;</a></li><ul><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7B2C;&#x4E00;&#x7248;&#x8FED;&#x4EE3;--&#x4F7F;&#x7528;cython&#x7F16;&#x8BD1;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;"><b>1.1. </b>&#x7B2C;&#x4E00;&#x7248;&#x8FED;&#x4EE3;--&#x4F7F;&#x7528;cython&#x7F16;&#x8BD1;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7B2C;&#x4E8C;&#x7248;&#x8FED;&#x4EE3;--&#x9759;&#x6001;&#x5316;&#x53C2;&#x6570;"><b>1.2. </b>&#x7B2C;&#x4E8C;&#x7248;&#x8FED;&#x4EE3;--&#x9759;&#x6001;&#x5316;&#x53C2;&#x6570;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7B2C;&#x4E09;&#x7248;&#x8FED;&#x4EE3;--&#x7F13;&#x51B2;&#x8BED;&#x6CD5;"><b>1.3. </b>&#x7B2C;&#x4E09;&#x7248;&#x8FED;&#x4EE3;--&#x201C;&#x7F13;&#x51B2;&#x201D;&#x8BED;&#x6CD5;</a></li><li><span class="title-icon fa fa-hand-o-right"></span><a href="#&#x7B2C;&#x56DB;&#x7248;&#x8FED;&#x4EE3;--&#x8C03;&#x6574;cython&#x8BBE;&#x7F6E;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x9AD8;&#x6570;&#x7EC4;&#x6548;&#x7387;"><b>1.4. </b>&#x7B2C;&#x56DB;&#x7248;&#x8FED;&#x4EE3;--&#x8C03;&#x6574;cython&#x8BBE;&#x7F6E;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x9AD8;&#x6570;&#x7EC4;&#x6548;&#x7387;</a></li></ul></ul></div><a href="#&#x4E0E;numpy&#x7ED3;&#x5408;&#x5B9E;&#x73B0;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="&#x4E0E;numpy&#x7ED3;&#x5408;&#x5B9E;&#x73B0;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;"><a name="&#x4E0E;numpy&#x7ED3;&#x5408;&#x5B9E;&#x73B0;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;" class="anchor-navigation-ex-anchor" href="#&#x4E0E;numpy&#x7ED3;&#x5408;&#x5B9E;&#x73B0;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x4E0E;numpy&#x7ED3;&#x5408;&#x5B9E;&#x73B0;&#x9AD8;&#x6548;&#x7684;&#x6570;&#x7EC4;&#x64CD;&#x4F5C;</h1>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C06;&#x56FE;&#x50CF;&#x4E0E;&#x6EE4;&#x955C;&#x8FDB;&#x884C;&#x4E8C;&#x7EF4;&#x79BB;&#x6563;&#x5377;&#x79EF;(&#x6211;&#x76F8;&#x4FE1;&#x4F60;&#x53EF;&#x4EE5;&#x505A;&#x5F97;&#x66F4;&#x597D;,&#x8BA9;&#x5B83;&#x7528;&#x4E8E;&#x6F14;&#x793A;).&#x5B83;&#x662F;&#x6709;&#x6548;&#x7684;Python&#x548C;&#x6709;&#x6548;&#x7684;Cython&#x4EE3;&#x7801;.&#x6211;&#x5C06;&#x5176;&#x79F0;&#x4E3A;Python&#x7248;&#x672C;&#x7684;<code>convolve_py.py</code>&#x548C;Cython&#x7248;&#x672C;&#x7684;<code>convolve1.pyx</code></p>
+<pre><code class="lang-python">%%writefile convolve_py.py
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">naive_convolve</span><span class="hljs-params">(f, g)</span>:</span>
+    <span class="hljs-comment"># f is an image and is indexed by (v, w)</span>
+    <span class="hljs-comment"># g is a filter kernel and is indexed by (s, t),</span>
+    <span class="hljs-comment">#   it needs odd dimensions</span>
+    <span class="hljs-comment"># h is the output image and is indexed by (x, y),</span>
+    <span class="hljs-comment">#   it is not cropped</span>
+    <span class="hljs-keyword">if</span> g.shape[<span class="hljs-number">0</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> g.shape[<span class="hljs-number">1</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Only odd dimensions on filter supported&quot;</span>)
+    <span class="hljs-comment"># smid and tmid are number of pixels between the center pixel</span>
+    <span class="hljs-comment"># and the edge, ie for a 5x5 filter they will be 2.</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># The output size is calculated by adding smid, tmid to each</span>
+    <span class="hljs-comment"># side of the dimensions of the input image.</span>
+    vmax = f.shape[<span class="hljs-number">0</span>]
+    wmax = f.shape[<span class="hljs-number">1</span>]
+    smax = g.shape[<span class="hljs-number">0</span>]
+    tmax = g.shape[<span class="hljs-number">1</span>]
+    smid = smax // <span class="hljs-number">2</span>
+    tmid = tmax // <span class="hljs-number">2</span>
+    xmax = vmax + <span class="hljs-number">2</span>*smid
+    ymax = wmax + <span class="hljs-number">2</span>*tmid
+    <span class="hljs-comment"># Allocate result image.</span>
+    h = np.zeros([xmax, ymax], dtype=f.dtype)
+    <span class="hljs-comment"># Do convolution</span>
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(xmax):
+        <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> range(ymax):
+            <span class="hljs-comment"># Calculate pixel value for h at (x,y). Sum one component</span>
+            <span class="hljs-comment"># for each pixel (s, t) of the filter g.</span>
+            s_from = max(smid - x, -smid)
+            s_to = min((xmax - x) - smid, smid + <span class="hljs-number">1</span>)
+            t_from = max(tmid - y, -tmid)
+            t_to = min((ymax - y) - tmid, tmid + <span class="hljs-number">1</span>)
+            value = <span class="hljs-number">0</span>
+            <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> range(s_from, s_to):
+                <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(t_from, t_to):
+                    v = x - smid + s
+                    w = y - tmid + t
+                    value += g[smid - s, tmid - t] * f[v, w]
+            h[x, y] = value
+    <span class="hljs-keyword">return</span> h
+</code></pre>
+<pre><code>Writing convolve_py.py
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+</code></pre>
+<pre><code class="lang-python">N = <span class="hljs-number">100</span>
+f = np.arange(N*N, dtype=np.int).reshape((N,N))
+g = np.arange(<span class="hljs-number">81</span>, dtype=np.int).reshape((<span class="hljs-number">9</span>, <span class="hljs-number">9</span>))
+</code></pre>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> convolve_py <span class="hljs-keyword">import</span> naive_convolve
+</code></pre>
+<pre><code class="lang-python">naive_convolve(f,g)
+</code></pre>
+<pre><code>array([[      0,       0,       1, ...,    2056,    1477,     792],
+       [      0,     109,     329, ...,    8858,    6227,    3275],
+       [    900,    2127,    3684, ...,   23106,   16050,    8349],
+       ..., 
+       [1850400, 3730389, 5639970, ..., 6230334, 4183464, 2106687],
+       [1329300, 2678435, 4047407, ..., 4445402, 2983649, 1501849],
+       [ 712800, 1435572, 2168317, ..., 2369524, 1589761,  799920]])
+</code></pre><pre><code class="lang-python">%timeit -n10 naive_convolve(f,g)
+</code></pre>
+<pre><code>786 ms &#xB1; 16.5 ms per loop (mean &#xB1; std. dev. of 7 runs, 10 loops each)
+</code></pre><p>&#x4F7F;&#x7528;cython&#x7F16;&#x8BD1;&#x5E26;numpy&#x7684;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x5728;setup.py&#x4E2D;&#x6307;&#x5B9A;<code>include_dirs=[numpy.get_include()]</code></p>
+<h2 id="&#x7B2C;&#x4E00;&#x7248;&#x8FED;&#x4EE3;--&#x4F7F;&#x7528;cython&#x7F16;&#x8BD1;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;"><a name="&#x7B2C;&#x4E00;&#x7248;&#x8FED;&#x4EE3;--&#x4F7F;&#x7528;cython&#x7F16;&#x8BD1;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E00;&#x7248;&#x8FED;&#x4EE3;--&#x4F7F;&#x7528;cython&#x7F16;&#x8BD1;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x7B2C;&#x4E00;&#x7248;&#x8FED;&#x4EE3;--&#x4F7F;&#x7528;cython&#x7F16;&#x8BD1;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;</h2>
+<p>&#x4EE3;&#x7801;&#x4E0D;&#x7528;&#x6539;,&#x76F4;&#x63A5;&#x7F16;&#x8BD1;&#x4EE5;&#x63D0;&#x9AD8;&#x6027;&#x80FD;</p>
+<pre><code class="lang-python">%%writefile convolve1.pyx
+
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">naive_convolve_1</span><span class="hljs-params">(f, g)</span>:</span>
+    <span class="hljs-comment"># f is an image and is indexed by (v, w)</span>
+    <span class="hljs-comment"># g is a filter kernel and is indexed by (s, t),</span>
+    <span class="hljs-comment">#   it needs odd dimensions</span>
+    <span class="hljs-comment"># h is the output image and is indexed by (x, y),</span>
+    <span class="hljs-comment">#   it is not cropped</span>
+    <span class="hljs-keyword">if</span> g.shape[<span class="hljs-number">0</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> g.shape[<span class="hljs-number">1</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Only odd dimensions on filter supported&quot;</span>)
+    <span class="hljs-comment"># smid and tmid are number of pixels between the center pixel</span>
+    <span class="hljs-comment"># and the edge, ie for a 5x5 filter they will be 2.</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># The output size is calculated by adding smid, tmid to each</span>
+    <span class="hljs-comment"># side of the dimensions of the input image.</span>
+    vmax = f.shape[<span class="hljs-number">0</span>]
+    wmax = f.shape[<span class="hljs-number">1</span>]
+    smax = g.shape[<span class="hljs-number">0</span>]
+    tmax = g.shape[<span class="hljs-number">1</span>]
+    smid = smax // <span class="hljs-number">2</span>
+    tmid = tmax // <span class="hljs-number">2</span>
+    xmax = vmax + <span class="hljs-number">2</span>*smid
+    ymax = wmax + <span class="hljs-number">2</span>*tmid
+    <span class="hljs-comment"># Allocate result image.</span>
+    h = np.zeros([xmax, ymax], dtype=f.dtype)
+    <span class="hljs-comment"># Do convolution</span>
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(xmax):
+        <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> range(ymax):
+            <span class="hljs-comment"># Calculate pixel value for h at (x,y). Sum one component</span>
+            <span class="hljs-comment"># for each pixel (s, t) of the filter g.</span>
+            s_from = max(smid - x, -smid)
+            s_to = min((xmax - x) - smid, smid + <span class="hljs-number">1</span>)
+            t_from = max(tmid - y, -tmid)
+            t_to = min((ymax - y) - tmid, tmid + <span class="hljs-number">1</span>)
+            value = <span class="hljs-number">0</span>
+            <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> range(s_from, s_to):
+                <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(t_from, t_to):
+                    v = x - smid + s
+                    w = y - tmid + t
+                    value += g[smid - s, tmid - t] * f[v, w]
+            h[x, y] = value
+    <span class="hljs-keyword">return</span> h
+</code></pre>
+<pre><code>Writing convolve1.pyx
+</code></pre><pre><code class="lang-python">%%writefile setup.py
+
+<span class="hljs-keyword">from</span> distutils.core <span class="hljs-keyword">import</span> setup
+<span class="hljs-keyword">from</span> Cython.Build <span class="hljs-keyword">import</span> cythonize
+<span class="hljs-keyword">from</span> distutils.extension <span class="hljs-keyword">import</span> Extension
+<span class="hljs-keyword">from</span> Cython.Distutils <span class="hljs-keyword">import</span> build_ext
+<span class="hljs-keyword">import</span> numpy
+
+extension = Extension(
+           <span class="hljs-string">&quot;convolve1&quot;</span>,
+           sources=[<span class="hljs-string">&quot;convolve1.pyx&quot;</span>],
+           include_dirs=[numpy.get_include()], <span class="hljs-comment"># &#x5982;&#x679C;&#x7528;&#x5230;numpy</span>
+           language=<span class="hljs-string">&quot;c++&quot;</span>
+)
+
+setup(
+        cmdclass = {<span class="hljs-string">&apos;build_ext&apos;</span>: build_ext},
+        ext_modules = cythonize(extension),
+)
+</code></pre>
+<pre><code>Writing setup.py
+</code></pre><pre><code class="lang-python">!python setup.py build_ext --inplace
+</code></pre>
+<pre><code>Compiling convolve1.pyx because it changed.
+[1/1] Cythonizing convolve1.pyx
+running build_ext
+building &apos;convolve1&apos; extension
+creating build
+creating build/temp.macosx-10.7-x86_64-3.6
+gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include -I/Users/huangsizhe/LIB/CONDA/anaconda/include/python3.6m -c convolve1.cpp -o build/temp.macosx-10.7-x86_64-3.6/convolve1.o
+g++ -bundle -undefined dynamic_lookup -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -arch x86_64 build/temp.macosx-10.7-x86_64-3.6/convolve1.o -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -o /Users/huangsizhe/WORKSPACE/Blog/Docs/Python/TutorialForPythonDataAnalysis/ipynbs/numpy/convolve1.cpython-36m-darwin.so
+clang: [0;1;35mwarning: [0mlibstdc++ is deprecated; move to libc++ with a minimum deployment target of OS X 10.9[0m
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">from</span> convolve1 <span class="hljs-keyword">import</span> naive_convolve_1
+</code></pre>
+<pre><code class="lang-python">naive_convolve_1(f,g)
+</code></pre>
+<pre><code>array([[      0,       0,       1, ...,    2056,    1477,     792],
+       [      0,     109,     329, ...,    8858,    6227,    3275],
+       [    900,    2127,    3684, ...,   23106,   16050,    8349],
+       ..., 
+       [1850400, 3730389, 5639970, ..., 6230334, 4183464, 2106687],
+       [1329300, 2678435, 4047407, ..., 4445402, 2983649, 1501849],
+       [ 712800, 1435572, 2168317, ..., 2369524, 1589761,  799920]])
+</code></pre><pre><code class="lang-python">%timeit -n10 naive_convolve_1(f,g)
+</code></pre>
+<pre><code>594 ms &#xB1; 14.2 ms per loop (mean &#xB1; std. dev. of 7 runs, 10 loops each)
+</code></pre><p>&#x7B2C;&#x4E00;&#x7248;&#x4EC0;&#x4E48;&#x4E5F;&#x4E0D;&#x6539;&#x5C31;&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;1/4&#x7684;&#x6027;&#x80FD;</p>
+<h2 id="&#x7B2C;&#x4E8C;&#x7248;&#x8FED;&#x4EE3;--&#x9759;&#x6001;&#x5316;&#x53C2;&#x6570;"><a name="&#x7B2C;&#x4E8C;&#x7248;&#x8FED;&#x4EE3;--&#x9759;&#x6001;&#x5316;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E8C;&#x7248;&#x8FED;&#x4EE3;--&#x9759;&#x6001;&#x5316;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x7B2C;&#x4E8C;&#x7248;&#x8FED;&#x4EE3;--&#x9759;&#x6001;&#x5316;&#x53C2;&#x6570;</h2>
+<p>&#x5C06;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x4EE5;&#x53CA;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;&#x90FD;&#x7533;&#x660E;&#x4E3A;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x4EE5;&#x63D0;&#x9AD8;&#x8FD0;&#x884C;&#x6548;&#x7387;</p>
+<pre><code class="lang-python">%%writefile convolve2.pyx
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<span class="hljs-comment">##&#x5FC5;&#x987B;&#x4E3A;c&#x7C7B;&#x578B;&#x548C;python&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x90FD;&#x7533;&#x660E;&#x4E00;&#x4E2A;np</span>
+
+cimport numpy <span class="hljs-keyword">as</span> np
+
+DTYPE = np.int
+
+ctypedef np.int_t DTYPE_t
+
+<span class="hljs-comment"># &#x53C2;&#x6570;&#x9759;&#x6001;&#x5316;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">naive_convolve_2</span><span class="hljs-params">(np.ndarray f, np.ndarray g)</span>:</span>
+    <span class="hljs-keyword">if</span> g.shape[<span class="hljs-number">0</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> g.shape[<span class="hljs-number">1</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Only odd dimensions on filter supported&quot;</span>)
+    <span class="hljs-keyword">assert</span> f.dtype == DTYPE <span class="hljs-keyword">and</span> g.dtype == DTYPE
+
+    <span class="hljs-comment">#&#x5C06;&#x4E2D;&#x95F4;&#x53D8;&#x91CF;&#x90FD;&#x9759;&#x6001;&#x5316;</span>
+    cdef int vmax = f.shape[<span class="hljs-number">0</span>]
+    cdef int wmax = f.shape[<span class="hljs-number">1</span>]
+    cdef int smax = g.shape[<span class="hljs-number">0</span>]
+    cdef int tmax = g.shape[<span class="hljs-number">1</span>]
+    cdef int smid = smax // <span class="hljs-number">2</span>
+    cdef int tmid = tmax // <span class="hljs-number">2</span>
+    cdef int xmax = vmax + <span class="hljs-number">2</span>*smid
+    cdef int ymax = wmax + <span class="hljs-number">2</span>*tmid
+    cdef np.ndarray h = np.zeros([xmax, ymax], dtype=DTYPE)
+    cdef int x, y, s, t, v, w
+    cdef int s_from, s_to, t_from, t_to
+    cdef DTYPE_t value
+
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(xmax):
+        <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> range(ymax):
+            s_from = max(smid - x, -smid)
+            s_to = min((xmax - x) - smid, smid + <span class="hljs-number">1</span>)
+            t_from = max(tmid - y, -tmid)
+            t_to = min((ymax - y) - tmid, tmid + <span class="hljs-number">1</span>)
+            value = <span class="hljs-number">0</span>
+            <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> range(s_from, s_to):
+                <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(t_from, t_to):
+                    v = x - smid + s
+                    w = y - tmid + t
+                    value += g[smid - s, tmid - t] * f[v, w]
+            h[x, y] = value
+    <span class="hljs-keyword">return</span> h
+</code></pre>
+<pre><code>Writing convolve2.pyx
+</code></pre><pre><code class="lang-python">%%writefile setup.py
+
+<span class="hljs-keyword">from</span> distutils.core <span class="hljs-keyword">import</span> setup
+<span class="hljs-keyword">from</span> Cython.Build <span class="hljs-keyword">import</span> cythonize
+<span class="hljs-keyword">from</span> distutils.extension <span class="hljs-keyword">import</span> Extension
+<span class="hljs-keyword">from</span> Cython.Distutils <span class="hljs-keyword">import</span> build_ext
+<span class="hljs-keyword">import</span> numpy
+
+extension = Extension(
+           <span class="hljs-string">&quot;convolve2&quot;</span>,
+           sources=[<span class="hljs-string">&quot;convolve2.pyx&quot;</span>],
+           include_dirs=[numpy.get_include()], <span class="hljs-comment"># &#x5982;&#x679C;&#x7528;&#x5230;numpy</span>
+           language=<span class="hljs-string">&quot;c++&quot;</span>
+)
+
+setup(
+        cmdclass = {<span class="hljs-string">&apos;build_ext&apos;</span>: build_ext},
+        ext_modules = cythonize(extension),
+)
+</code></pre>
+<pre><code>Overwriting setup.py
+</code></pre><pre><code class="lang-python">!python setup.py build_ext --inplace
+</code></pre>
+<pre><code>Compiling convolve2.pyx because it changed.
+[1/1] Cythonizing convolve2.pyx
+running build_ext
+building &apos;convolve2&apos; extension
+gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include -I/Users/huangsizhe/LIB/CONDA/anaconda/include/python3.6m -c convolve2.cpp -o build/temp.macosx-10.7-x86_64-3.6/convolve2.o
+In file included from convolve2.cpp:465:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1777:
+[1m/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: [0m[0;1;35mwarning: [0m[1m
+      &quot;Using deprecated NumPy API, disable it by &quot;          &quot;#defining
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-W#warnings][0m
+#warning &quot;Using deprecated NumPy API, disable it by &quot; \
+[0;1;32m ^
+[0m1 warning generated.
+g++ -bundle -undefined dynamic_lookup -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -arch x86_64 build/temp.macosx-10.7-x86_64-3.6/convolve2.o -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -o /Users/huangsizhe/WORKSPACE/Blog/Docs/Python/TutorialForPythonDataAnalysis/ipynbs/numpy/convolve2.cpython-36m-darwin.so
+clang: [0;1;35mwarning: [0mlibstdc++ is deprecated; move to libc++ with a minimum deployment target of OS X 10.9[0m
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">from</span> convolve2 <span class="hljs-keyword">import</span> naive_convolve_2
+</code></pre>
+<pre><code class="lang-python">naive_convolve_2(f,g)
+</code></pre>
+<pre><code>array([[      0,       0,       1, ...,    2056,    1477,     792],
+       [      0,     109,     329, ...,    8858,    6227,    3275],
+       [    900,    2127,    3684, ...,   23106,   16050,    8349],
+       ..., 
+       [1850400, 3730389, 5639970, ..., 6230334, 4183464, 2106687],
+       [1329300, 2678435, 4047407, ..., 4445402, 2983649, 1501849],
+       [ 712800, 1435572, 2168317, ..., 2369524, 1589761,  799920]])
+</code></pre><pre><code class="lang-python">%timeit -n10 naive_convolve_2(f,g)
+</code></pre>
+<pre><code>593 ms &#xB1; 16.1 ms per loop (mean &#xB1; std. dev. of 7 runs, 10 loops each)
+</code></pre><h2 id="&#x7B2C;&#x4E09;&#x7248;&#x8FED;&#x4EE3;--&#x7F13;&#x51B2;&#x8BED;&#x6CD5;"><a name="&#x7B2C;&#x4E09;&#x7248;&#x8FED;&#x4EE3;--&#x7F13;&#x51B2;&#x8BED;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x4E09;&#x7248;&#x8FED;&#x4EE3;--&#x7F13;&#x51B2;&#x8BED;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x7B2C;&#x4E09;&#x7248;&#x8FED;&#x4EE3;--&#x201C;&#x7F13;&#x51B2;&#x201D;&#x8BED;&#x6CD5;</h2>
+<p>&#x63D0;&#x9AD8;np&#x6570;&#x7EC4;&#x7684;&#x6548;&#x7387;,&#x6211;&#x4EEC;&#x7528;&#x4E00;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x201C;&#x7F13;&#x51B2;&#x201D;&#x8BED;&#x6CD5;&#x6765;&#x505A;&#x5230;&#x8FD9;&#x4E00;&#x70B9;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x544A;&#x8BC9;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF08;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF09;&#x548C;&#x7EF4;&#x6570;&#xFF08;&#x201C;ndim&#x201D;&#x4EC5;&#x5173;&#x952E;&#x5B57;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x63D0;&#x4F9B;&#xFF0C;&#x5219;&#x5047;&#x5B9A;&#x4E00;&#x7EF4;</p>
+<pre><code class="lang-python">%%writefile convolve3.pyx
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<span class="hljs-comment">##&#x5FC5;&#x987B;&#x4E3A;c&#x7C7B;&#x578B;&#x548C;python&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x90FD;&#x7533;&#x660E;&#x4E00;&#x4E2A;np</span>
+
+cimport numpy <span class="hljs-keyword">as</span> np
+
+DTYPE = np.int
+
+ctypedef np.int_t DTYPE_t
+<span class="hljs-comment"># &#x201C;&#x7F13;&#x51B2;&#x201D;&#x8BED;&#x6CD5;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">naive_convolve_3</span><span class="hljs-params">(np.ndarray[DTYPE_t, ndim=<span class="hljs-number">2</span>] f, np.ndarray[DTYPE_t, ndim=<span class="hljs-number">2</span>] g)</span>:</span>
+    <span class="hljs-keyword">if</span> g.shape[<span class="hljs-number">0</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> g.shape[<span class="hljs-number">1</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Only odd dimensions on filter supported&quot;</span>)
+    <span class="hljs-keyword">assert</span> f.dtype == DTYPE <span class="hljs-keyword">and</span> g.dtype == DTYPE
+
+    cdef int vmax = f.shape[<span class="hljs-number">0</span>]
+    cdef int wmax = f.shape[<span class="hljs-number">1</span>]
+    cdef int smax = g.shape[<span class="hljs-number">0</span>]
+    cdef int tmax = g.shape[<span class="hljs-number">1</span>]
+    cdef int smid = smax // <span class="hljs-number">2</span>
+    cdef int tmid = tmax // <span class="hljs-number">2</span>
+    cdef int xmax = vmax + <span class="hljs-number">2</span>*smid
+    cdef int ymax = wmax + <span class="hljs-number">2</span>*tmid
+    <span class="hljs-comment"># &#x201C;&#x7F13;&#x51B2;&#x201D;&#x8BED;&#x6CD5;</span>
+    cdef np.ndarray[DTYPE_t, ndim=<span class="hljs-number">2</span>] h = np.zeros([xmax, ymax], dtype=DTYPE)
+
+    cdef int x, y, s, t, v, w
+
+    cdef int s_from, s_to, t_from, t_to
+
+    cdef DTYPE_t value
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(xmax):
+        <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> range(ymax):
+            s_from = max(smid - x, -smid)
+            s_to = min((xmax - x) - smid, smid + <span class="hljs-number">1</span>)
+            t_from = max(tmid - y, -tmid)
+            t_to = min((ymax - y) - tmid, tmid + <span class="hljs-number">1</span>)
+            value = <span class="hljs-number">0</span>
+            <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> range(s_from, s_to):
+                <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(t_from, t_to):
+                    v = x - smid + s
+                    w = y - tmid + t
+                    value += g[smid - s, tmid - t] * f[v, w]
+            h[x, y] = value
+    <span class="hljs-keyword">return</span> h
+</code></pre>
+<pre><code>Overwriting convolve3.pyx
+</code></pre><pre><code class="lang-python">%%writefile setup.py
+
+<span class="hljs-keyword">from</span> distutils.core <span class="hljs-keyword">import</span> setup
+<span class="hljs-keyword">from</span> Cython.Build <span class="hljs-keyword">import</span> cythonize
+<span class="hljs-keyword">from</span> distutils.extension <span class="hljs-keyword">import</span> Extension
+<span class="hljs-keyword">from</span> Cython.Distutils <span class="hljs-keyword">import</span> build_ext
+<span class="hljs-keyword">import</span> numpy
+
+extension = Extension(
+           <span class="hljs-string">&quot;convolve3&quot;</span>,
+           sources=[<span class="hljs-string">&quot;convolve3.pyx&quot;</span>],
+           include_dirs=[numpy.get_include()], <span class="hljs-comment"># &#x5982;&#x679C;&#x7528;&#x5230;numpy</span>
+           language=<span class="hljs-string">&quot;c++&quot;</span>
+)
+
+setup(
+        cmdclass = {<span class="hljs-string">&apos;build_ext&apos;</span>: build_ext},
+        ext_modules = cythonize(extension),
+)
+</code></pre>
+<pre><code>Overwriting setup.py
+</code></pre><pre><code class="lang-python">!python setup.py build_ext --inplace
+</code></pre>
+<pre><code>Compiling convolve3.pyx because it changed.
+[1/1] Cythonizing convolve3.pyx
+running build_ext
+building &apos;convolve3&apos; extension
+gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include -I/Users/huangsizhe/LIB/CONDA/anaconda/include/python3.6m -c convolve3.cpp -o build/temp.macosx-10.7-x86_64-3.6/convolve3.o
+In file included from convolve3.cpp:465:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1777:
+[1m/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: [0m[0;1;35mwarning: [0m[1m
+      &quot;Using deprecated NumPy API, disable it by &quot;          &quot;#defining
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-W#warnings][0m
+#warning &quot;Using deprecated NumPy API, disable it by &quot; \
+[0;1;32m ^
+[0m1 warning generated.
+g++ -bundle -undefined dynamic_lookup -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -arch x86_64 build/temp.macosx-10.7-x86_64-3.6/convolve3.o -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -o /Users/huangsizhe/WORKSPACE/Blog/Docs/Python/TutorialForPythonDataAnalysis/ipynbs/numpy/convolve3.cpython-36m-darwin.so
+clang: [0;1;35mwarning: [0mlibstdc++ is deprecated; move to libc++ with a minimum deployment target of OS X 10.9[0m
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">from</span> convolve3 <span class="hljs-keyword">import</span> naive_convolve_3
+</code></pre>
+<pre><code class="lang-python">naive_convolve_3(f,g)
+</code></pre>
+<pre><code>array([[      0,       0,       1, ...,    2056,    1477,     792],
+       [      0,     109,     329, ...,    8858,    6227,    3275],
+       [    900,    2127,    3684, ...,   23106,   16050,    8349],
+       ..., 
+       [1850400, 3730389, 5639970, ..., 6230334, 4183464, 2106687],
+       [1329300, 2678435, 4047407, ..., 4445402, 2983649, 1501849],
+       [ 712800, 1435572, 2168317, ..., 2369524, 1589761,  799920]])
+</code></pre><pre><code class="lang-python">%timeit -n10 naive_convolve_3(f,g)
+</code></pre>
+<pre><code>3.23 ms &#xB1; 452 &#xB5;s per loop (mean &#xB1; std. dev. of 7 runs, 10 loops each)
+</code></pre><p>&#x63D0;&#x9AD8;&#x4E86;150&#x500D;&#x7684;&#x6027;&#x80FD;</p>
+<h2 id="&#x7B2C;&#x56DB;&#x7248;&#x8FED;&#x4EE3;--&#x8C03;&#x6574;cython&#x8BBE;&#x7F6E;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x9AD8;&#x6570;&#x7EC4;&#x6548;&#x7387;"><a name="&#x7B2C;&#x56DB;&#x7248;&#x8FED;&#x4EE3;--&#x8C03;&#x6574;cython&#x8BBE;&#x7F6E;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x9AD8;&#x6570;&#x7EC4;&#x6548;&#x7387;" class="anchor-navigation-ex-anchor" href="#&#x7B2C;&#x56DB;&#x7248;&#x8FED;&#x4EE3;--&#x8C03;&#x6574;cython&#x8BBE;&#x7F6E;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x9AD8;&#x6570;&#x7EC4;&#x6548;&#x7387;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x7B2C;&#x56DB;&#x7248;&#x8FED;&#x4EE3;--&#x8C03;&#x6574;cython&#x8BBE;&#x7F6E;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x63D0;&#x9AD8;&#x6570;&#x7EC4;&#x6548;&#x7387;</h2>
+<pre><code class="lang-python">%%writefile convolve4.pyx
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<span class="hljs-comment">##&#x5FC5;&#x987B;&#x4E3A;c&#x7C7B;&#x578B;&#x548C;python&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x90FD;&#x7533;&#x660E;&#x4E00;&#x4E2A;np</span>
+
+cimport numpy <span class="hljs-keyword">as</span> np
+
+DTYPE = np.int
+
+ctypedef np.int_t DTYPE_t
+
+cimport cython
+<span class="hljs-meta">@cython.boundscheck(False) # &#x5173;&#x95ED;&#x8FB9;&#x754C;&#x68C0;&#x67E5;</span>
+<span class="hljs-meta">@cython.wraparound(False)  # &#x5173;&#x95ED;&#x8D1F;&#x6307;&#x6570;&#x6362;&#x884C;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">naive_convolve_4</span><span class="hljs-params">(np.ndarray[DTYPE_t, ndim=<span class="hljs-number">2</span>] f, np.ndarray[DTYPE_t, ndim=<span class="hljs-number">2</span>] g)</span>:</span>
+    <span class="hljs-keyword">if</span> g.shape[<span class="hljs-number">0</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span> <span class="hljs-keyword">or</span> g.shape[<span class="hljs-number">1</span>] % <span class="hljs-number">2</span> != <span class="hljs-number">1</span>:
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Only odd dimensions on filter supported&quot;</span>)
+    <span class="hljs-keyword">assert</span> f.dtype == DTYPE <span class="hljs-keyword">and</span> g.dtype == DTYPE
+
+    cdef int vmax = f.shape[<span class="hljs-number">0</span>]
+    cdef int wmax = f.shape[<span class="hljs-number">1</span>]
+    cdef int smax = g.shape[<span class="hljs-number">0</span>]
+    cdef int tmax = g.shape[<span class="hljs-number">1</span>]
+    cdef int smid = smax // <span class="hljs-number">2</span>
+    cdef int tmid = tmax // <span class="hljs-number">2</span>
+    cdef int xmax = vmax + <span class="hljs-number">2</span>*smid
+    cdef int ymax = wmax + <span class="hljs-number">2</span>*tmid
+    <span class="hljs-comment"># &#x201C;&#x7F13;&#x51B2;&#x201D;&#x8BED;&#x6CD5;</span>
+    cdef np.ndarray[DTYPE_t, ndim=<span class="hljs-number">2</span>] h = np.zeros([xmax, ymax], dtype=DTYPE)
+    cdef int s, t
+    cdef unsigned int x, y, v, w 
+
+    cdef int s_from, s_to, t_from, t_to
+
+    cdef DTYPE_t value
+    <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(xmax):
+        <span class="hljs-keyword">for</span> y <span class="hljs-keyword">in</span> range(ymax):
+            s_from = max(smid - x, -smid)
+            s_to = min((xmax - x) - smid, smid + <span class="hljs-number">1</span>)
+            t_from = max(tmid - y, -tmid)
+            t_to = min((ymax - y) - tmid, tmid + <span class="hljs-number">1</span>)
+            value = <span class="hljs-number">0</span>
+            <span class="hljs-keyword">for</span> s <span class="hljs-keyword">in</span> range(s_from, s_to):
+                <span class="hljs-keyword">for</span> t <span class="hljs-keyword">in</span> range(t_from, t_to):
+                    v = &lt;unsigned int&gt;(x - smid + s)<span class="hljs-comment">#&#x6307;&#x5B9A;&#x7C7B;&#x578B;</span>
+                    w = &lt;unsigned int&gt;(y - tmid + t)<span class="hljs-comment">#&#x6307;&#x5B9A;&#x7C7B;&#x578B;</span>
+                    value += g[&lt;unsigned int&gt;(smid - s), &lt;unsigned int&gt;(tmid - t)] * f[v, w]<span class="hljs-comment">#&#x6307;&#x5B9A;&#x7C7B;&#x578B;</span>
+            h[x, y] = value
+    <span class="hljs-keyword">return</span> h
+</code></pre>
+<pre><code>Overwriting convolve4.pyx
+</code></pre><pre><code class="lang-python">%%writefile setup.py
+
+<span class="hljs-keyword">from</span> distutils.core <span class="hljs-keyword">import</span> setup
+<span class="hljs-keyword">from</span> Cython.Build <span class="hljs-keyword">import</span> cythonize
+<span class="hljs-keyword">from</span> distutils.extension <span class="hljs-keyword">import</span> Extension
+<span class="hljs-keyword">from</span> Cython.Distutils <span class="hljs-keyword">import</span> build_ext
+<span class="hljs-keyword">import</span> numpy
+
+extension = Extension(
+           <span class="hljs-string">&quot;convolve4&quot;</span>,
+           sources=[<span class="hljs-string">&quot;convolve4.pyx&quot;</span>],
+           include_dirs=[numpy.get_include()], <span class="hljs-comment"># &#x5982;&#x679C;&#x7528;&#x5230;numpy</span>
+           language=<span class="hljs-string">&quot;c++&quot;</span>
+)
+
+setup(
+        cmdclass = {<span class="hljs-string">&apos;build_ext&apos;</span>: build_ext},
+        ext_modules = cythonize(extension),
+)
+</code></pre>
+<pre><code>Overwriting setup.py
+</code></pre><pre><code class="lang-python">!python setup.py build_ext --inplace
+</code></pre>
+<pre><code>Compiling convolve4.pyx because it changed.
+[1/1] Cythonizing convolve4.pyx
+running build_ext
+building &apos;convolve4&apos; extension
+gcc -Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/include -arch x86_64 -I/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include -I/Users/huangsizhe/LIB/CONDA/anaconda/include/python3.6m -c convolve4.cpp -o build/temp.macosx-10.7-x86_64-3.6/convolve4.o
+In file included from convolve4.cpp:465:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h:4:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/ndarrayobject.h:18:
+In file included from /Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/ndarraytypes.h:1777:
+[1m/Users/huangsizhe/LIB/CONDA/anaconda/lib/python3.6/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:15:2: [0m[0;1;35mwarning: [0m[1m
+      &quot;Using deprecated NumPy API, disable it by &quot;          &quot;#defining
+      NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION&quot; [-W#warnings][0m
+#warning &quot;Using deprecated NumPy API, disable it by &quot; \
+[0;1;32m ^
+[0m[1mconvolve4.cpp:1901:33: [0m[0;1;35mwarning: [0m[1mcomparison of integers of different signs:
+      &apos;unsigned int&apos; and &apos;int&apos; [-Wsign-compare][0m
+  for (__pyx_t_9 = 0; __pyx_t_9 &lt; __pyx_t_8; __pyx_t_9+=1) {
+[0;1;32m                      ~~~~~~~~~ ^ ~~~~~~~~~
+[0m[1mconvolve4.cpp:1912:37: [0m[0;1;35mwarning: [0m[1mcomparison of integers of different signs:
+      &apos;unsigned int&apos; and &apos;int&apos; [-Wsign-compare][0m
+    for (__pyx_t_11 = 0; __pyx_t_11 &lt; __pyx_t_10; __pyx_t_11+=1) {
+[0;1;32m                         ~~~~~~~~~~ ^ ~~~~~~~~~~
+[0m[1mconvolve4.cpp:1924:24: [0m[0;1;35mwarning: [0m[1mcomparison of integers of different signs: &apos;int&apos;
+      and &apos;unsigned int&apos; [-Wsign-compare][0m
+      if (((__pyx_t_12 &gt; __pyx_t_13) != 0)) {
+[0;1;32m            ~~~~~~~~~~ ^ ~~~~~~~~~~
+[0m[1mconvolve4.cpp:1956:24: [0m[0;1;35mwarning: [0m[1mcomparison of integers of different signs: &apos;int&apos;
+      and &apos;unsigned int&apos; [-Wsign-compare][0m
+      if (((__pyx_t_12 &gt; __pyx_t_14) != 0)) {
+[0;1;32m            ~~~~~~~~~~ ^ ~~~~~~~~~~
+[0m5 warnings generated.
+g++ -bundle -undefined dynamic_lookup -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -arch x86_64 build/temp.macosx-10.7-x86_64-3.6/convolve4.o -L/Users/huangsizhe/LIB/CONDA/anaconda/lib -o /Users/huangsizhe/WORKSPACE/Blog/Docs/Python/TutorialForPythonDataAnalysis/ipynbs/numpy/convolve4.cpython-36m-darwin.so
+clang: [0;1;35mwarning: [0mlibstdc++ is deprecated; move to libc++ with a minimum deployment target of OS X 10.9[0m
+</code></pre><pre><code class="lang-python"><span class="hljs-keyword">from</span> convolve4 <span class="hljs-keyword">import</span> naive_convolve_4
+</code></pre>
+<pre><code class="lang-python">naive_convolve_4(f,g)
+</code></pre>
+<pre><code>array([[      0,       0,       1, ...,    2056,    1477,     792],
+       [      0,     109,     329, ...,    8858,    6227,    3275],
+       [    900,    2127,    3684, ...,   23106,   16050,    8349],
+       ..., 
+       [1850400, 3730389, 5639970, ..., 6230334, 4183464, 2106687],
+       [1329300, 2678435, 4047407, ..., 4445402, 2983649, 1501849],
+       [ 712800, 1435572, 2168317, ..., 2369524, 1589761,  799920]])
+</code></pre><pre><code class="lang-python">%timeit -n10 naive_convolve_4(f,g)
+</code></pre>
+<pre><code>1.83 ms &#xB1; 275 &#xB5;s per loop (mean &#xB1; std. dev. of 7 runs, 10 loops each)
+</code></pre><p>&#x53C8;&#x63D0;&#x9AD8;&#x4E86;&#x5C06;&#x8FD1;1&#x500D;&#x7684;&#x901F;&#x5EA6;</p>
+<p>&#x4ECE;&#x6700;&#x539F;&#x59CB;&#x7684;&#x7248;&#x672C;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x7248;&#x672C;&#x6211;&#x4EEC;&#x7684;&#x7684;&#x4EE3;&#x7801;&#x6548;&#x7387;&#x5BF9;&#x6BD4;786ms/1.83ms,&#x51E0;&#x4E4E;&#x662F;400&#x500D;&#x7684;&#x6548;&#x7387;&#x63D0;&#x9AD8;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2017-07-25 23:15:36
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="频谱分析/频谱分析.html" class="navigation navigation-prev " aria-label="Previous page: 频谱分析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../pandas/" class="navigation navigation-next " aria-label="Next page: 结构化数据处理工具pandas">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"使用Cython扩展numpy","level":"1.2.7","depth":2,"next":{"title":"结构化数据处理工具pandas","level":"1.3","depth":1,"path":"pandas/README.md","ref":"pandas/README.md","articles":[{"title":"表格基本操作","level":"1.3.1","depth":2,"path":"pandas/basic_operation.md","ref":"pandas/basic_operation.md","articles":[]},{"title":"数据清洗","level":"1.3.2","depth":2,"path":"pandas/Munging_Data.md","ref":"pandas/Munging_Data.md","articles":[]},{"title":"分组与集聚","level":"1.3.3","depth":2,"path":"pandas/Grouping_and_clustering.md","ref":"pandas/Grouping_and_clustering.md","articles":[]},{"title":"复合索引","level":"1.3.4","depth":2,"path":"pandas/MultiIndex.md","ref":"pandas/MultiIndex.md","articles":[]},{"title":"统计分析","level":"1.3.5","depth":2,"path":"pandas/statistical_analysis/statistical_analysis.md","ref":"pandas/statistical_analysis/statistical_analysis.md","articles":[]},{"title":"数据可视化","level":"1.3.6","depth":2,"path":"pandas/Visualization/Visualization.md","ref":"pandas/Visualization/Visualization.md","articles":[]},{"title":"数据获取与保存","level":"1.3.7","depth":2,"path":"pandas/data_procurement.md","ref":"pandas/data_procurement.md","articles":[]}]},"previous":{"title":"频谱分析","level":"1.2.6","depth":2,"path":"numpy/频谱分析/频谱分析.md","ref":"numpy/频谱分析/频谱分析.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://blog.hszofficial.site/TutorialForPythonDataAnalysis/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonDataAnalysis","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python数据分析攻略","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍python的基本的数据分析工具"},"file":{"path":"numpy/使用Cython扩展numpy.md","mtime":"2017-07-25T15:15:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T13:03:20.914Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

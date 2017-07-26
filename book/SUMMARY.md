@@ -8,7 +8,7 @@
     * [用numpy做简单的统计](numpy/用numpy做简单的统计/用numpy做简单的统计.md)
     * [numpy的财务分析工具](numpy/numpy的财务分析函数.md)
     * [频谱分析](numpy/频谱分析/频谱分析.md)
-    * [使用Cython扩展numpy](numpy/使用Cython扩展numpy/使用Cython扩展numpy.md)
+    * [使用Cython扩展numpy](numpy/使用Cython扩展numpy.md)
 
 * [结构化数据处理工具pandas](pandas/README.md)
     * [表格基本操作](pandas/basic_operation.md)

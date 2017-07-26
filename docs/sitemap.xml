@@ -2,12 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/narray_and_universal_function/narray_and_universal_function.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/element_type_op_and_random/element_type_op_and_random.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/statistics/statistics.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/Financial_functions.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/frequency_analysis/frequency_analysis.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/高性能数组narray及其universaal_function/高性能数组narray及其universaal_function.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/多项式和线性代数/多项式和线性代数.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/用numpy做简单的统计/用numpy做简单的统计.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/numpy的财务分析函数.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/频谱分析/频谱分析.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/numpy/使用Cython扩展numpy.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/pandas/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/pandas/basic_operation.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://blog.hszofficial.site/TutorialForPythonDataAnalysis/pandas/Munging_Data.html</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>

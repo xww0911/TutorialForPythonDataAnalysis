@@ -86,10 +86,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../../pandas/" />
+    <link rel="next" href="../使用Cython扩展numpy.html" />
     
     
-    <link rel="prev" href="../Financial_functions.html" />
+    <link rel="prev" href="../numpy的财务分析函数.html" />
     
 
     <style>
@@ -165,12 +165,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../narray_and_universal_function/narray_and_universal_function.html">
+        <li class="chapter " data-level="1.2.1" data-path="../高性能数组narray及其universaal_function/高性能数组narray及其universaal_function.html">
             
-                <a href="../narray_and_universal_function/narray_and_universal_function.html">
+                <a href="../高性能数组narray及其universaal_function/高性能数组narray及其universaal_function.html">
             
                     
-                    numpy数组与universal-function
+                    高性能数组narray及其universaal_function
             
                 </a>
             
@@ -178,12 +178,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../element_type_op_and_random/element_type_op_and_random.html">
+        <li class="chapter " data-level="1.2.2" data-path="../元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html">
             
-                <a href="../element_type_op_and_random/element_type_op_and_random.html">
+                <a href="../元素数据类型和内置数学运算和随机数/元素数据类型和内置数学运算和随机数.html">
             
                     
-                    numpy数组的元素类型和随机操作
+                    元素数据类型和内置数学运算和随机数
             
                 </a>
             
@@ -191,12 +191,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+        <li class="chapter " data-level="1.2.3" data-path="../多项式和线性代数/多项式和线性代数.html">
             
-                <a href="../Polynomials_and_Linear_algebra/Polynomials_and_Linear_algebra.html">
+                <a href="../多项式和线性代数/多项式和线性代数.html">
             
                     
-                    多项式与线性代数计算
+                    多项式和线性代数
             
                 </a>
             
@@ -204,12 +204,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../statistics/statistics.html">
+        <li class="chapter " data-level="1.2.4" data-path="../用numpy做简单的统计/用numpy做简单的统计.html">
             
-                <a href="../statistics/statistics.html">
+                <a href="../用numpy做简单的统计/用numpy做简单的统计.html">
             
                     
-                    numpy的统计学工具
+                    用numpy做简单的统计
             
                 </a>
             
@@ -217,9 +217,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="../Financial_functions.html">
+        <li class="chapter " data-level="1.2.5" data-path="../numpy的财务分析函数.html">
             
-                <a href="../Financial_functions.html">
+                <a href="../numpy的财务分析函数.html">
             
                     
                     numpy的财务分析工具
@@ -230,12 +230,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.6" data-path="frequency_analysis.html">
+        <li class="chapter active" data-level="1.2.6" data-path="频谱分析.html">
             
-                <a href="frequency_analysis.html">
+                <a href="频谱分析.html">
             
                     
                     频谱分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../使用Cython扩展numpy.html">
+            
+                <a href="../使用Cython扩展numpy.html">
+            
+                    
+                    使用Cython扩展numpy
             
                 </a>
             
@@ -585,13 +598,13 @@ np&#x4E2D;&#x7528;<code>np.fft</code>&#x6A21;&#x5757;&#x53EF;&#x4EE5;&#x505A;&#x
 <p><script type="math/tex; ">f(x)=\sum_k c_k sin kx</script></p>
 <h4 id="&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8868;&#x8FBE;&#x5F62;&#x5F0F;"><a name="&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8868;&#x8FBE;&#x5F62;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8868;&#x8FBE;&#x5F62;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8868;&#x8FBE;&#x5F62;&#x5F0F;" class="plugin-anchor" href="#&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8868;&#x8FBE;&#x5F62;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6700;&#x5E38;&#x89C1;&#x7684;&#x8868;&#x8FBE;&#x5F62;&#x5F0F;</h4>
 <p>&#x5468;&#x671F;&#x4E3A;T&#x7684;&#x51FD;&#x6570;f(x)&#x6709;&#xFF1A;</p>
-<p><script type="math/tex; "> \begin{align}
+<p><script type="math/tex; ">\begin{align}
 f(x)&=a_0+\sum_{k=1}^\infty{[a_k sin (k{2\pi\over T}x)+b_k cos(k{2\pi\over T}x)]}\\
 &=a_0+\sum_{k=1}^\infty{\sqrt{a_k^2+b_k^2} [sin(k{2\pi\over T}x+\theta)]}
-\end{align} </script></p>
+\end{align}</script></p>
 <p>&#x7136;&#x540E;&#x56E0;&#x4E3A;&#x6709;&#x6B27;&#x62C9;&#x516C;&#x5F0F;:</p>
-<p><script type="math/tex; "> \cos x={\frac {e^{ix}+e^{-ix}} 2} </script></p>
-<p><script type="math/tex; "> \sin x={\frac {e^{ix}-e^{-ix}} 2i} </script></p>
+<p><script type="math/tex; "> cos x={ \frac {e^{ix}+e^{-ix}} 2} </script></p>
+<p><script type="math/tex; "> sin x={\frac {e^{ix}-e^{-ix}} 2i} </script></p>
 <p>&#x6240;&#x4EE5;&#x6709;:</p>
 <p><script type="math/tex; "> f(x) = \sum_{k=-\infty}^{+\infty}a_k e^{ik({2\pi\over T})t}</script></p>
 <h3 id="&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;_1"><a name="&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;_1" class="anchor-navigation-ex-anchor" href="#&#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;_1"><i class="fa fa-link" aria-hidden="true"></i></a>1.1.2. &#x5085;&#x91CC;&#x53F6;&#x53D8;&#x6362;:</h3>
@@ -864,7 +877,7 @@ plt.show()
 </code></pre>
 <p><img src="output_30_0.png" alt="png"></p>
 <h3 id="blackman&#x7A97;"><a name="blackman&#x7A97;" class="anchor-navigation-ex-anchor" href="#blackman&#x7A97;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2.2. Blackman&#x7A97;</h3>
-<p><script type="math/tex; mode=display">
+<p><script type="math/tex; "> 
 w(n)=a_0 - a_1 \cos \left ( \frac{2 \pi n}{N-1} \right) + a_2 \cos \left ( \frac{4 \pi n}{N-1} \right)
 </script>
 <script type="math/tex; mode=display">
@@ -909,7 +922,7 @@ plt.show()
 </code></pre>
 <p><img src="output_38_0.png" alt="png"></p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; hsz 2017 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2017-06-18 23:25:50
+2017-07-25 23:17:26
 </span></footer>
                                 
                                 </section>
@@ -937,12 +950,12 @@ plt.show()
 
             
                 
-                <a href="../Financial_functions.html" class="navigation navigation-prev " aria-label="Previous page: numpy的财务分析工具">
+                <a href="../numpy的财务分析函数.html" class="navigation navigation-prev " aria-label="Previous page: numpy的财务分析工具">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../../pandas/" class="navigation navigation-next " aria-label="Next page: 结构化数据处理工具pandas">
+                <a href="../使用Cython扩展numpy.html" class="navigation navigation-next " aria-label="Next page: 使用Cython扩展numpy">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -953,7 +966,7 @@ plt.show()
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"频谱分析","level":"1.2.6","depth":2,"next":{"title":"结构化数据处理工具pandas","level":"1.3","depth":1,"path":"pandas/README.md","ref":"pandas/README.md","articles":[{"title":"表格基本操作","level":"1.3.1","depth":2,"path":"pandas/basic_operation.md","ref":"pandas/basic_operation.md","articles":[]},{"title":"数据清洗","level":"1.3.2","depth":2,"path":"pandas/Munging_Data.md","ref":"pandas/Munging_Data.md","articles":[]},{"title":"分组与集聚","level":"1.3.3","depth":2,"path":"pandas/Grouping_and_clustering.md","ref":"pandas/Grouping_and_clustering.md","articles":[]},{"title":"复合索引","level":"1.3.4","depth":2,"path":"pandas/MultiIndex.md","ref":"pandas/MultiIndex.md","articles":[]},{"title":"统计分析","level":"1.3.5","depth":2,"path":"pandas/statistical_analysis/statistical_analysis.md","ref":"pandas/statistical_analysis/statistical_analysis.md","articles":[]},{"title":"数据可视化","level":"1.3.6","depth":2,"path":"pandas/Visualization/Visualization.md","ref":"pandas/Visualization/Visualization.md","articles":[]},{"title":"数据获取与保存","level":"1.3.7","depth":2,"path":"pandas/data_procurement.md","ref":"pandas/data_procurement.md","articles":[]}]},"previous":{"title":"numpy的财务分析工具","level":"1.2.5","depth":2,"path":"numpy/Financial_functions.md","ref":"numpy/Financial_functions.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://blog.hszofficial.site/TutorialForPythonDataAnalysis/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonDataAnalysis","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python数据分析攻略","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍python的基本的数据分析工具"},"file":{"path":"numpy/frequency_analysis/frequency_analysis.md","mtime":"2017-06-18T15:25:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-01T14:14:13.803Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"频谱分析","level":"1.2.6","depth":2,"next":{"title":"使用Cython扩展numpy","level":"1.2.7","depth":2,"path":"numpy/使用Cython扩展numpy.md","ref":"numpy/使用Cython扩展numpy.md","articles":[]},"previous":{"title":"numpy的财务分析工具","level":"1.2.5","depth":2,"path":"numpy/numpy的财务分析函数.md","ref":"numpy/numpy的财务分析函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","search-pro","advanced-emoji","github","github-buttons","mathjax","splitter","expandable-chapters-small","tbfed-pagefooter","-sharing","donate","sitemap-general","anchors","anchor-navigation-ex"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy hsz 2017","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/hsz1273327"},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"donate":{"alipay":"http://blog.hszofficial.site/img/zhifubao_donate.jpg","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"http://blog.hszofficial.site/img/wechat_donate.jpg","wechatText":"微信打赏"},"sitemap-general":{"prefix":"http://blog.hszofficial.site/TutorialForPythonDataAnalysis/"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":true},"mode":"float","pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"showLevel":true},"github-buttons":{"repo":"hsz1273327/TutorialForPythonDataAnalysis","types":["star","watch","fork"],"size":"small"},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"advanced-emoji":{"embedEmojis":false},"sharing":{"weibo":false,"facebook":false,"twitter":false,"google":true,"instapaper":false,"vk":false,"all":["google"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"hsz","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python数据分析攻略","language":"zh-hans","links":{"sidebar":{"Home":"http://blog.hszofficial.site/"}},"gitbook":">=2.0.0","description":"介绍python的基本的数据分析工具"},"file":{"path":"numpy/频谱分析/频谱分析.md","mtime":"2017-07-25T15:17:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-26T13:03:20.914Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
